@@ -1,1 +1,10 @@
 /* pages/main/main.wxss */
+.card {
+  width: 100%;
+  height:20vh;
+}
+
+.map-container {
+  height: 100vh;
+  overflow: hidden;
+}

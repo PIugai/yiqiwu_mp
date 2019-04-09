@@ -1,0 +1,5 @@
+/* pages/favorite/favorite.wxss */
+.card {
+  width: 100%;
+  height:20vh;
+}

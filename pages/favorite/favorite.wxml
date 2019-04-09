@@ -1,0 +1,12 @@
+<!--pages/favorite/favorite.wxml-->
+<view>
+  <view>
+    <image src="/image/wushu-card.png" class='card'></image>
+  </view>
+  <view>
+    <image src="/image/tops-card.png" class='card'></image>
+  </view>
+  <view>
+    <image src="/image/kites-card.png" class='card'></image>
+  </view>
+</view>
