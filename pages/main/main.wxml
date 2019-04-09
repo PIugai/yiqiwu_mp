@@ -1,0 +1,8 @@
+<!--pages/main/main.wxml-->
+<text>pages/main/main.wxml</text>
+<view>Get current location</view>
+<view>--------------------</view>
+<view>Latitude : {{latitude}}</view>
+<view>Longitude : {{longitude}}</view>
+<view>Speed : {{speed}}</view>
+<view>Accuracy : {{Accuracy}}</view>
