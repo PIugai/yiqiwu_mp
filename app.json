@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/main/main",
-    "pages/favorite/favorite"
+    "pages/favorite/favorite",
+    "pages/show/show",
+    "pages/activities/activities"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,10 +24,16 @@
     "color": "#919191",
     "list": [
       {
-        "pagePath": "pages/main/main",
-        "text": "Activities",
+        "pagePath": "pages/activities/activities",
+        "text": "My Activities",
         "iconPath": "image/dance.png",
         "selectedIconPath": "image/dance-selected.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "Find Activities",
+        "iconPath": "image/find.png",
+        "selectedIconPath": "image/find-selected.png"
       },
       {
         "pagePath": "pages/favorite/favorite",
