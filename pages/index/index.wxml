@@ -2,13 +2,16 @@
 
 <swiper indicator-dots="true" interval="{{interval}}" duration="{{duration}}">
     <swiper-item> 
-      <image src="/image/landing1.jpg" class="slide-image"></image>
+      <view style="background-image: url('/image/spin-top.jpg')" class='swiper-item-bg'>
+      </view>
     </swiper-item>
     <swiper-item>
-     <image src="/image/landing4.jpg" class="slide-image"></image>
+      <view style="background-image: url('/image/taijichuan.jpg')" class='swiper-item-bg'>
+      </view>
     </swiper-item>
      <swiper-item>
-     <image src="/image/landing6.jpg" class="slide-image"></image>
+      <view style="background-image: url('/image/dance1.png')" class='swiper-item-bg'>
+      </view>
      <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn">Start!</button>
     <block wx:else>
