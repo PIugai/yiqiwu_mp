@@ -26,7 +26,22 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    let self = this;
+    // const userId = app.globalData.userId
+    const userId = 1
+    // Get api data
+    wx.request({
+      url: `http://yiqiwu.wogengapp.cn/api/v1/users/${userId}`,
+      method: 'GET',
+      success(u) {
+        const bookings = u.data.bookings;
 
+        // Update local data
+        self.setData({
+          bookings: bookings
+        });
+      }
+    });
   },
 
   /**
