@@ -1,4 +1,5 @@
 // pages/activities/activities.js
+const app = getApp();
 Page({
 
   /**
@@ -27,15 +28,18 @@ Page({
    */
   onShow: function () {
     let self = this;
-    // const userId = app.globalData.userId
-    const userId = 1
+
+    // Toggle below two comment/uncomment until login works
+    const userId = 2
+    // const userId = app.globalData.userId;
+
     // Get api data
     wx.request({
       url: `http://yiqiwu.wogengapp.cn/api/v1/users/${userId}`,
       method: 'GET',
       success(u) {
         const bookings = u.data.bookings;
-
+      
         // Update local data
         self.setData({
           bookings: bookings
