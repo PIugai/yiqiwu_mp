@@ -28,10 +28,8 @@ Page({
    */
   onShow: function () {
     let self = this;
-
-    // Toggle below two comment/uncomment until login works
-    const userId = 2
-    // const userId = app.globalData.userId;
+    
+    const userId = app.globalData.userId;
 
     // Get api data
     wx.request({

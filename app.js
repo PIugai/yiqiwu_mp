@@ -13,7 +13,9 @@ App({
             code: res.code
           },
           success: (res) => {
-            this.globalData.userId = res.data.userId
+            this.globalData.userId = res.data.userId;
+            console.log("hi");
+            console.log(res.data.userId)
           }
         })
         wx.getSetting({
