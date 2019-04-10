@@ -1,53 +1,32 @@
-// pages/main/main.js
 Page({
 
-  /**
-   * Page initial data
-   */
   data: {
     lt: "31.232065",
     lg: "121.470645",
-    sc: '14',
-    mk: [ 
-      {
-      iconPath: "/image/wushu.png", // **1
-      id: 0,
-      latitude: 31.219614,
-      longitude: 121.443877,
-      width: 40,
-      height: 40,
-      cardImg : '/image/wushu-card.png',
-        callout: { content: "Wushu", fontSize: 15, color: "#000000", padding: 10 }
-    },
-      {
-        iconPath: "/image/toulou.png", // **1
-        id: 1,
-        latitude: 31.218000,
-        longitude: 121.4800,
-        width: 40,
-        height: 40,
-        cardImg: '/image/tops-card.png',
-        callout: { content: "Spinning tops", fontSize: 15, color: "#000000", padding: 10 }
-      },
-      {
-        iconPath: "/image/kite.png", // **1
-        id: 2,
-        latitude: 31.24000,
-        longitude: 121.4800,
-        width: 40,
-        height: 40,
-        cardImg: '/image/kites-card.png',
-        callout: { content: "Kites", fontSize: 15, color: "#000000", padding: 10 }
-      }
-    ]
+    sc: '14'
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
   onLoad: function (options) {
-    let that = this
-    // wx.getLocation({
+    let page = this;
+    wx.request({
+      // url: "http://yiqiwu.wogengapp.cn/api/v1/events",
+      url: "http://localhost:3000/api/v1/events",
+      method: 'GET',
+      success(e) {
+        const events = e.data.events;
+        events.forEach((event) => {
+          event["height"] = 60;
+          event["width"] = 50;
+        });
+
+        page.setData({
+          mk: events
+        });
+      }
+    });
+
+    // let that = this
+    // wx.getLocation({    events: null,
     //   type: 'wgs84', // **1
     //   success: function (res) {
     //     var latitude = res.latitude
@@ -69,64 +48,20 @@ Page({
       // })
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
   markertap(e) {
-    console.log(e.markerId);
-    let cardImg;
-    let mk = this.data.mk;
-    let mkImg = mk[e.markerId].cardImg
-    console.log(mkImg);
+    const mk = this.data.mk;
+    const event = mk.find(mk => mk.id === e.markerId)
+
     this.setData({
-      cardImg: mkImg
+      event: event
     })
-
-
   },
 
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
+  showEvent(e) {
+    const event_id = e.currentTarget.dataset.event;
 
+    wx.navigateTo({
+      url: `../show/show?id=${event_id}`
+    });
   }
 })
