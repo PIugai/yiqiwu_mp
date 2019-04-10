@@ -32,8 +32,8 @@
       {
         "pagePath": "pages/main/main",
         "text": "Find Activities",
-        "iconPath": "image/dance.png",
-        "selectedIconPath": "image/dance-selected.png"
+        "iconPath": "image/find.png",
+        "selectedIconPath": "image/find-selected.png"
       },
       {
         "pagePath": "pages/favorite/favorite",
