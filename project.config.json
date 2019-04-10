@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.5",
-	"appid": "wx26ae30306a0cecc8",
+	"appid": "wx5a0df5897b522ab3",
 	"projectname": "yiqiwu_mp",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -57,6 +57,9 @@
 					"id": -1,
 					"name": "show",
 					"pathName": "pages/show/show",
+					"name": "activities",
+					"pathName": "pages/activities/activities",
+					"query": "",
 					"scene": null
 				}
 			]
