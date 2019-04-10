@@ -1,16 +1,18 @@
 <view class="card" style="background-image: url('{{photo}}');"></view>
 
-<view class="event">
-
+<view class="top-block">
 <image class="avatar"></image>
-
-<view>
-<text>Activity Type</text>
-</view>
 
 <view class="id">
 <text>User_id</text>
 </view>
+
+<view class="location">
+<text>Location</text>
+</view>
+</view>
+
+<view class="bot-block">
 
 <view class="time">
 <text>start_time - end_time</text>
@@ -24,16 +26,11 @@
 <text>Description</text>
 </view>
 
-<view class="location">
-<text>Location</text>
-</view>
+
 
 <view class="date">
   <view>
-    <text>Created: {{created_at}}</text>
-  </view>
-  <view>
-    <text>Updated: {{updated_at}}</text>
+    <text>Created: {{created_at}}Updated: {{updated_at}}</text>
   </view>
 </view>
 
