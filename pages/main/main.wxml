@@ -16,8 +16,12 @@
     <!-- <view wx:for="{{bands}}" wx:for-item="band" wx:key="band.id" bindtap="showBand" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('{{band.photo}}');" data-band="{{band}}"> -->
       <!-- <image wx:if="{{cardImg}}" src="{{cardImg}}" class='card'></image>
       <image wx:else  src='/image/choose.png' class='card'></image> -->
-    <text>{{event.id}}</text>
-    <text>{{event.activity_type}}</text>
+      <view class="btn_text">
+    <text >{{event.id}}-{{event.activity_type}}</text>
+    </view>
+    <!-- <text  class="btn_text"></text> -->
+    <view class="btn_capacity">
     <text>{{event.spots_filled}} / {{event.capacity}}</text>
+    </view>
   </view>
 </view>
