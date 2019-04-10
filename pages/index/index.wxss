@@ -8,8 +8,8 @@ flex-flow:row wrap;
 }
 
 swiper {
-  position: center;
-  height: 730px;
+  position: relative;
+  height: 100vh;
   align-items: center;
   bottom: 0px;
 }
