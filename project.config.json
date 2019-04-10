@@ -55,6 +55,8 @@
 				},
 				{
 					"id": -1,
+					"name": "show",
+					"pathName": "pages/show/show",
 					"name": "activities",
 					"pathName": "pages/activities/activities",
 					"query": "",

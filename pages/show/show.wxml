@@ -1,0 +1,50 @@
+<view class="card" style="background-image: url('{{photo}}');"></view>
+
+<view class="event">
+
+<image class="avatar"></image>
+
+<view>
+<text>Activity Type</text>
+</view>
+
+<view class="id">
+<text>User_id</text>
+</view>
+
+<view class="time">
+<text>start_time - end_time</text>
+</view>
+
+<view class="capacity">
+<text>spots_filled / capacity</text>
+</view>
+
+<view class="description">
+<text>Description</text>
+</view>
+
+<view class="location">
+<text>Location</text>
+</view>
+
+<view class="date">
+  <view>
+    <text>Created: {{created_at}}</text>
+  </view>
+  <view>
+    <text>Updated: {{updated_at}}</text>
+  </view>
+</view>
+
+ <view class="map-container">
+<map bindmarkertap="markertap" longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 25vh;" markers="{{mk}}"></map>
+</view>
+ 
+  <view class="btn">
+    <button bindtap="bindSubmit">Count me in!</button>
+  </view>
+
+
+
+</view>
