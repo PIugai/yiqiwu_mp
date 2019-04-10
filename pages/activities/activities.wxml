@@ -1,0 +1,6 @@
+<view wx:for="{{bookings}}" wx:for-item="booking">
+  <view class="">
+    <text>{{booking.start_time}}</text>
+    <text>{{booking.description}}</text>
+  </view>
+</view>

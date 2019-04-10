@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/main/main",
-    "pages/favorite/favorite"
+    "pages/favorite/favorite",
+    "pages/activities/activities"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -22,8 +23,14 @@
     "color": "#919191",
     "list": [
       {
+        "pagePath": "pages/activities/activities",
+        "text": "My Activities",
+        "iconPath": "image/dance.png",
+        "selectedIconPath": "image/dance-selected.png"
+      },
+      {
         "pagePath": "pages/main/main",
-        "text": "Activities",
+        "text": "Find Activities",
         "iconPath": "image/dance.png",
         "selectedIconPath": "image/dance-selected.png"
       },
