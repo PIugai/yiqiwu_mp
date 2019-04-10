@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/main/main",
-    "pages/favorite/favorite"
+    "pages/favorite/favorite",
+    "pages/activities/activities"
   ],
   "window":{
     "backgroundTextStyle":"light",
