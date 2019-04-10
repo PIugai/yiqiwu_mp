@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/main/main",
     "pages/favorite/favorite",
+    "pages/show/show"
     "pages/activities/activities"
   ],
   "window":{
