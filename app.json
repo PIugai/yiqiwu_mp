@@ -1,16 +1,16 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/main/main",
     "pages/favorite/favorite",
     "pages/show/show",
     "pages/activities/activities"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "permission": {
     "scope.userLocation": {
@@ -42,5 +42,6 @@
         "selectedIconPath": "image/star-selected.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
