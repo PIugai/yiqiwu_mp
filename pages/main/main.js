@@ -13,8 +13,8 @@ Page({
     console.log("test")
     console.log(userId)
     wx.request({
-      url: "http://yiqiwu.wogengapp.cn/api/v1/events",
-      // url: "http://localhost:3000/api/v1/events",
+      // url: "http://yiqiwu.wogengapp.cn/api/v1/events",
+      url: "http://localhost:3000/api/v1/events",
       method: 'GET',
       success(e) {
         const events = e.data.events;

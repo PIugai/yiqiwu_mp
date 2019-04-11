@@ -10,8 +10,8 @@ Page({
 
     wx.request({
       // url: `http://yiqiwu.wogengapp.cn/api/v1/events/${options.id}`,
-      // url: `http://localhost:3000/api/v1/events/${options.id}`,
-      url: `http://yiqiwu.wogengapp.cn/api/v1/events/33`,
+      url: `http://localhost:3000/api/v1/events/${options.id}`,
+      // url: `http://yiqiwu.wogengapp.cn/api/v1/events/33`,
       method: 'GET',
       success(e) {
         const event = e.data;
