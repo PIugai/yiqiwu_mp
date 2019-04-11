@@ -6,6 +6,7 @@
     "pages/show/show",
     "pages/activities/activities",
     "pages/create/create"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -4,17 +4,17 @@ Page({
   data: {
     lt: "31.232065",
     lg: "121.470645",
-    sc: '14'
+    sc: '14',
+    map: true,
+    selection_blank: true,
+    selection_true: false
   },
 
   onLoad: function (options) {
     let page = this;
-    const userId = app.globalData.userId
-    console.log("test")
-    console.log(userId)
     wx.request({
-      // url: "http://yiqiwu.wogengapp.cn/api/v1/events",
-      url: "http://localhost:3000/api/v1/events",
+      url: "http://yiqiwu.wogengapp.cn/api/v1/events",
+      // url: "http://localhost:3000/api/v1/events",
       method: 'GET',
       success(e) {
         const events = e.data.events;
@@ -54,9 +54,13 @@ Page({
   markertap(e) {
     const mk = this.data.mk;
     const event = mk.find(mk => mk.id === e.markerId)
+    const selection_blank = false
+    const selection_true = true
 
     this.setData({
-      event: event
+      event: event,
+      selection_blank: selection_blank,
+      selection_true: selection_true
     })
   },
 
@@ -66,5 +70,26 @@ Page({
     wx.navigateTo({
       url: `../show/show?id=${event_id}`
     });
-  }
+  },
+
+selectMap() {
+  const map = true;
+  const list = false;
+
+  this.setData({
+    map: map,
+    list: list
+  })
+},
+
+selectList() {
+  const map = false;
+  const list = true;
+
+  this.setData({
+    map: map,
+    list: list
+  })
+}
+
 })

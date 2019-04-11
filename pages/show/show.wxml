@@ -4,7 +4,7 @@
   <image class="avatar" src="{{event.host_photo}}"></image>
 
   <view class="id">
-  <text>Host: {{event.host}}</text>
+  <text>Host: {{event.host_name}}</text>
   </view>
 
   <view class="event-name">
