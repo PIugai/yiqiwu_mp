@@ -29,16 +29,37 @@ height: 100%;
 
 .btn {
   background-color: green; 
-  opacity: 0.7;
+  opacity: 0.9;
   width: 60%;
   z-index: 1;
   position: absolute;
-  bottom: 10%;
+  bottom: 4%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 20pt;
+  height: 8%;
+  color: white;
+  padding: 3%;
+  border-radius: 25px;
+  display: inline-block;
+  line-height: inherit;
+
 }
 
 .swiper-item-bg{
   height: 100vh;
   background-position: center;
+}
+
+.landing-text {
+padding: 1%;
+position: absolute;
+color: white;
+font-size: 35pt;
+text-align: center;
+top: 55%;
+text-shadow: 3px 2px rgb(78, 78, 78);
+background-color:rgba(226, 226, 226, 0.623);
+word-break: keep-all;
+width: 100%;
 }

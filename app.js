@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    const host = 'http://yiqiwu.shanghaiwogeng.com/'
+    const host = 'https://yiqiwu.shanghaiwogeng.com/'
     console.log('processing to login')
     wx.login({
       success: (res) => {
