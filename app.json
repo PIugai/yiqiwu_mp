@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/main/main",
-    "pages/favorite/favorite",
     "pages/show/show",
     "pages/activities/activities",
     "pages/create/create"
@@ -36,12 +35,6 @@
         "text": "Find Activities",
         "iconPath": "image/find.png",
         "selectedIconPath": "image/find-selected.png"
-      },
-      {
-        "pagePath": "pages/favorite/favorite",
-        "text": "Favorite",
-        "iconPath": "image/star.png",
-        "selectedIconPath": "image/star-selected.png"
       },
       {
         "pagePath": "pages/create/create",
