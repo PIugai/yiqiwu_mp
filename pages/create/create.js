@@ -34,6 +34,7 @@ Page({
     // Get api data
     wx.request({
       url: `http://yiqiwu.wogengapp.cn/api/v1/users/${userId}`,
+      // url: `http://localhost:3000/api/v1/users/${userId}`
       method: 'GET',
       success(u) {
         const events = u.data.events;
@@ -114,6 +115,7 @@ Page({
     console.log(33, event);
     wx.request({
       url: 'https://yiqiwu.wogengapp.cn/api/v1/events',
+      // url: `http://localhost:3000/api/v1/events`,
       method: 'POST',
       data: event,
       success(res) {

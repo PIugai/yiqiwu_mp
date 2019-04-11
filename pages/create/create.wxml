@@ -59,11 +59,11 @@
 <!-- cards for events starts here -->
 
 <view wx:for="{{events}}" wx:for-item="event" wx:key="event.id">
-  <view class="">
-    <text>{{event.activity_type}}</text>
-    <text>{{event.spots_filled}}</text>
-    <text>{{event.capacity}}</text>
-    <text>{{event.start_time}}</text>
+  <view class="" style="margin:15px;">
+    Event: <text>{{event.activity_type}} at </text>
+    <!-- <text>{{event.spots_filled}}</text>
+    <text>{{event.capacity}}</text> -->
+    <!-- <text>{{event.start_time}}</text> -->
     <text>{{event.location}}</text>
   </view>
 </view>
