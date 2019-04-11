@@ -1,47 +1,41 @@
 <view class="card" style="background-image: url('{{photo}}');"></view>
 
 <view class="top-block">
-<image class="avatar"></image>
+  <image class="avatar" src="{{event.host_photo}}"></image>
 
-<view class="id">
-<text>User_id</text>
-</view>
+  <view class="id">
+  <text>Host: {{event.host}}</text>
+  </view>
 
-<view class="location">
-<text>Location</text>
-</view>
+  <view class="event-name">
+    <view>{{event.activity_type}} @ {{event.location}}</view>
+  </view>
 </view>
 
 <view class="bot-block">
 
 <view class="time">
-<text>start_time - end_time</text>
+<text>Date: {{event.date}}</text>
+</view>
+
+<view class="time">
+<text>Time: {{event.start_time}} - {{event.end_time}}</text>
 </view>
 
 <view class="capacity">
-<text>spots_filled / capacity</text>
+<text>Spots: {{event.spots_filled}} / {{event.capacity}}</text>
 </view>
 
 <view class="description">
-<text>Description</text>
-</view>
-
-
-
-<view class="date">
-  <view>
-    <text>Created: {{created_at}}Updated: {{updated_at}}</text>
-  </view>
+<text>{{event.description}}</text>
 </view>
 
  <view class="map-container">
-<map bindmarkertap="markertap" longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 25vh;" markers="{{mk}}"></map>
+  <map longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 25vh;" markers="{{mk}}"></map>
 </view>
  
   <view class="btn">
     <button bindtap="bindSubmit">Count me in!</button>
   </view>
-
-
 
 </view>

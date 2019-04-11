@@ -1,66 +1,28 @@
-// pages/show/show.js
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-
+    lt: "31.232065",
+    lg: "121.470645",
+    sc: '14'
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
   onLoad: function (options) {
+    let page = this;
 
-  },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
+    wx.request({
+      // url: `http://yiqiwu.wogengapp.cn/api/v1/events/${options.id}`,
+      // url: `http://localhost:3000/api/v1/events/${options.id}`,
+      url: `http://yiqiwu.wogengapp.cn/api/v1/events/33`,
+      method: 'GET',
+      success(e) {
+        const event = e.data;
+        const mk = [e.data]
+        console.log(event)
+        console.log(mk)
+        page.setData({
+          event: event,
+          mk: mk
+        });
+      }
+    });
   }
 })
