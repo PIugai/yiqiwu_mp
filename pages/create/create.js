@@ -1,5 +1,5 @@
 // pages/create/create.js
-
+const app = getApp();
 Page({
 
   /**
@@ -28,9 +28,8 @@ Page({
    */
   onShow: function () {
     let self = this;
-    const app = getApp();
     const userId = app.globalData.userId;
-    // const userId = 847;
+    // const userId = 1103;
 
     // Get api data
     wx.request({
@@ -114,7 +113,7 @@ Page({
 
     console.log(33, event);
     wx.request({
-      url: 'http://yiqiwu.wogengapp.cn/api/v1/events',
+      url: 'https://yiqiwu.wogengapp.cn/api/v1/events',
       method: 'POST',
       data: event,
       success(res) {
