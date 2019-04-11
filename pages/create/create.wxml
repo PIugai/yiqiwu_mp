@@ -1,2 +1,71 @@
-<!--pages/create/create.wxml-->
-<text>pages/create/create.wxml</text>
+<!-- form to make a new event starts here-->
+
+<view class="h2-header">Create new</view>
+
+<view class="form-container">
+  
+  <form bindsubmit="bindSubmit">
+  <view class='box'>
+    <!-- <view class="user-input">
+      <view>
+        <image src="{{src}}"  bindtap='takePhoto' class='photo'></image>
+      </view>
+    </view> -->
+
+    <view class="user-input">
+      <view class="text-area-wrap">
+        <textarea value="{{activity_type}}" style="input-size" placeholder="Type of activity" class="input-height" name="activity_type" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+    <view class="user-input">
+      <view class="text-area-wrap">
+        <textarea value="{{description}}" style="input-size" placeholder="Description of activity" class="input-height" name="description" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+    <view class="user-input">
+      <view class="text-area-wrap">
+        <textarea value="{{start_time}}" style="input-size" placeholder="Start time" class="input-height" name="start_time" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+    <view class="user-input">
+      <view class="text-area-wrap">
+        <textarea value="{{end_time}}" style="input-size" placeholder="End time" class="input-height" name="end_time" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+    <view class="user-input">
+      <view class="text-area-wrap">
+        <textarea value="{{location}}" style="input-size"placeholder="Location" class="input-height" name="location" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+        <!-- <view class="user-input">
+            <checkbox-group bindchange="checkboxChange" class='boxcheck'>
+          <label class="checkbox" wx:for="{{items}}">
+          <view class='items'><checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}</view>
+          </label>
+        </checkbox-group>
+        </view> -->
+
+    <button  style="padding: 15rpx 15rpx;" type="primary" form-type="submit" loading="{{loading}}">Submit</button>
+    </view>
+    </form>
+
+  </view>
+
+<!-- cards for events starts here -->
+
+<view wx:for="{{events}}" wx:for-item="event" wx:key="event.id">
+  <view class="">
+    <text>{{event.activity_type}}</text>
+    <text>{{event.spots_filled}}</text>
+    <text>{{event.capacity}}</text>
+    <text>{{event.start_time}}</text>
+    <text>{{event.location}}</text>
+  </view>
+</view>
+
+<view wx:if="{{events.length===0}}">After you create an activity, it will appear here</view>
