@@ -5,7 +5,6 @@ App({
     console.log('processing to login')
     wx.login({
       success: (res) => {
-        console.log(res)
         wx.request({
           url: host + 'login',
           method: 'post',
@@ -13,8 +12,6 @@ App({
             code: res.code
           },
           success: (res) => {
-            console.log("getting result from rails api")
-            console.log(res)
             this.globalData.userId = res.data.userId;
           }
         })

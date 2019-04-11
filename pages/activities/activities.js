@@ -34,6 +34,7 @@ Page({
     // Get api data
     wx.request({
       url: `http://yiqiwu.wogengapp.cn/api/v1/users/${userId}`,
+      // url: `http://localhost:3000/api/v1/users/${userId}`,
       method: 'GET',
       success(u) {
         const bookings = u.data.bookings;
