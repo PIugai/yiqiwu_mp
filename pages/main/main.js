@@ -1,3 +1,4 @@
+const app = getApp();
 Page({
 
   data: {
@@ -8,6 +9,9 @@ Page({
 
   onLoad: function (options) {
     let page = this;
+    const userId = app.globalData.userId
+    console.log("test")
+    console.log(userId)
     wx.request({
       url: "http://yiqiwu.wogengapp.cn/api/v1/events",
       // url: "http://localhost:3000/api/v1/events",
@@ -25,29 +29,28 @@ Page({
       }
     });
 
-    // let that = this
-    // wx.getLocation({    events: null,
-    //   type: 'wgs84', // **1
-    //   success: function (res) {
-    //     var latitude = res.latitude
-    //     var longitude = res.longitude
-    //     var speed = res.speed
-    //     var accuracy = res.accuracy
-    //     that.setData({ latitude, longitude, speed, accuracy })
-    //   },
-    // }),
+    let that = this
+    wx.getLocation({    events: null,
+      type: 'wgs84', // **1
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+        that.setData({ latitude, longitude, speed, accuracy })
+      },
+    })
       // wx.chooseLocation({
       //   success: function (res) {
       //     console.log(res)
       //   }
       // }),
-      // wx.openLocation({
-      //   latitude: 30.64242,
-      //   longitude: 104.04311,
-      //   scale: 28
-      // })
+      // // wx.openLocation({
+      // //   latitude: 30.64242,
+      // //   longitude: 104.04311,
+      // //   scale: 28
+      // // })
   },
-
   markertap(e) {
     const mk = this.data.mk;
     const event = mk.find(mk => mk.id === e.markerId)
