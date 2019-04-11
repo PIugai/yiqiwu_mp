@@ -13,13 +13,11 @@
   padding: 10%; 
 
 }
-/* .event {
 
-} */
-.location {
+.event-name {
   position: absolute;
   margin-right: 0;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-top: -20%;
   text-align: initial;
 }

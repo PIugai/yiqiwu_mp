@@ -13,9 +13,9 @@ App({
             code: res.code
           },
           success: (res) => {
+            console.log("getting result from rails api")
+            console.log(res)
             this.globalData.userId = res.data.userId;
-            console.log("hi");
-            console.log(res.data.userId)
           }
         })
         wx.getSetting({

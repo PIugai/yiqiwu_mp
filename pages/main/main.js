@@ -1,3 +1,4 @@
+const app = getApp();
 Page({
 
   data: {
@@ -8,6 +9,9 @@ Page({
 
   onLoad: function (options) {
     let page = this;
+    const userId = app.globalData.userId
+    console.log("test")
+    console.log(userId)
     wx.request({
       url: "http://yiqiwu.wogengapp.cn/api/v1/events",
       // url: "http://localhost:3000/api/v1/events",
