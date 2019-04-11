@@ -1,7 +1,8 @@
 <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="booking.event_id">
-  <view class="">
-    <text>{{booking.start_time}}</text>
-    <text>{{booking.description}}</text>
+  <view class="card">
+    <view class="text-id">BOOKING ID: {{booking.event_id}}</view>
+    <view class="text-activity">{{booking.activity_type}}</view>
+    <view class="location">{{booking.location}}</view>
   </view>
 </view>
 <view wx:if="{{bookings.length===0}}">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
