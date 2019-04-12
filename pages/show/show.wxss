@@ -1,19 +1,15 @@
 .card {
   height: 200px;
   background-color: gold;
-  position: relatiive;
+  position: relative;
 }
-
 .top-block {
   padding: 3%;
 }
-
 .btn {
   flex-wrap: wrap;
-  padding: 10%; 
-
+  padding: 8%; 
 }
-
 .event-name {
   position: absolute;
   margin-right: 0;
@@ -21,7 +17,6 @@
   margin-top: -20%;
   text-align: initial;
 }
-
 .id {
   position: relative;
   margin-right: 8%;
@@ -29,25 +24,24 @@
   text-align: end;
   padding: 2%;
 }
-
 .time {
   text-align: center;
-  padding: 4%;
+  padding: 5px;
 }
-
 .capacity {
   text-align: center;
-  padding: 4%;
+  padding: 5px;
 }
 .description {
-  padding: 3%;
+  text-align: center;
+  padding: 10px;
 }
 
 .date {
-  padding: 3%;
+  /* padding: 3%; */
 }
 .map-container{
-margin-top: 10%;
+/* margin-top: 10%; */
 padding: 0%;
 }
 
