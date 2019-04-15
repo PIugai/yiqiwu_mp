@@ -2,8 +2,6 @@ const app = getApp();
 Page({
 
   data: {
-    lt: "31.232065",
-    lg: "121.470645",
     sc: '14',
     map: true,
     selection_blank: true,
@@ -29,7 +27,6 @@ Page({
       }
     });
 
-    let that = this
     wx.getLocation({    events: null,
       type: 'wgs84', // **1
       success: function (res) {
@@ -37,10 +34,17 @@ Page({
         var longitude = res.longitude
         var speed = res.speed
         var accuracy = res.accuracy
-        that.setData({ latitude, longitude, speed, accuracy })
+
+        page.setData({
+          lt: latitude,
+          lg: longitude,
+          speed: speed,
+          accuracy: accuracy
+        })
       },
     })
   },
+  
   markertap(e) {
     const mk = this.data.mk;
     const event = mk.find(mk => mk.id === e.markerId)
