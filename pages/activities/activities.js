@@ -24,14 +24,14 @@ Page({
 
   deleteBooking(e) {
     const data = e.currentTarget.dataset;
-    console.log(data)
+    console.log(e.currentTarget.dataset)
 
     wx.request({
-      url: app.globalData.host + app.globalData.version + `bookings/${data}`,
-      // url: `http://localhost:3000/` + app.globalData.version + `events/${data}`,
+      url: app.globalData.host + app.globalData.version + `bookings/${data.booking}`,
+      // url: `http://localhost:3000/` + app.globalData.version + `bookings/${data.booking}`,
       method: 'DELETE',
       success() {
-        wx.redirectTo({
+        wx.reLaunch({
           url: '/pages/activities/activities'
         });
       }
