@@ -12,7 +12,6 @@ Page({
     let page = this;
     wx.request({
       url: app.globalData.host + app.globalData.version + `events`,
-      // url: "http://localhost:3000/api/v1/events",
       method: 'GET',
       success(e) {
         const events = e.data.events;
