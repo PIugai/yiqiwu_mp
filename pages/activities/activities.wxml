@@ -1,8 +1,11 @@
 <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="booking.event_id">
   <view class="card">
-    <view class="text-id">BOOKING ID: {{booking.event_id}}</view>
+    <view class="text-id">BOOKING ID: {{booking.id}}</view>
     <view class="text-activity">{{booking.activity_type}}</view>
     <view class="location">{{booking.location}}</view>
+    <view class="delete-button">
+      <button bindtap="deleteBooking" data-booking="{{booking.id}}">Delete</button>
+    </view>
   </view>
 </view>
 <view wx:if="{{bookings.length===0}}">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>

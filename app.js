@@ -40,6 +40,7 @@ App({
   },
   globalData: {
     host: `https://yiqiwu.wogengapp.cn/`,
+    // host: `http://localhost:3000/`,
     version: `api/v1/`
   }
 })

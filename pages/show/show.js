@@ -9,7 +9,6 @@ Page({
 
     wx.request({
       url: app.globalData.host + app.globalData.version + `events/${options.id}`,
-      // url: `http://localhost:3000/api/v1/events/${options.id}`,
       method: 'GET',
       success(e) {
         let event = e.data;
@@ -35,7 +34,6 @@ Page({
     }
     wx.request({
       url: app.globalData.host + app.globalData.version + `users/${app.globalData.userId}/bookings`,
-       // url: `http://localhost:3000/api/v1/users/${app.globalData.userId}/bookings`,
       method: 'POST',
       data: booking,
       success() {
