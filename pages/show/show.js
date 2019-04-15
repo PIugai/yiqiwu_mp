@@ -1,7 +1,8 @@
 const app = getApp();
 Page({
   data: {
-    sc: '14'
+    sc: '14',
+    isNew: true
   },
 
   onLoad: function (options) {
@@ -12,7 +13,7 @@ Page({
       method: 'GET',
       success(e) {
         let event = e.data;
-        event["height"] = 60;
+        event["height"] = 60; 
         event["width"] = 50;
         const mk = [e.data];
         const lt = event.latitude;
@@ -22,6 +23,27 @@ Page({
           mk: mk,
           lt: lt,
           lg: lg
+        });
+      }
+    });
+
+    wx.request({
+      url: app.globalData.host + app.globalData.version + `users/${app.globalData.userId}`,
+      method: 'GET',
+      success(u) {
+        const eventId = page.data.event.id
+        const existingEvents = []
+        const userBookings = u.data.bookings
+        userBookings.forEach(function(booking) {
+          existingEvents.push(booking.event_id);
+        });
+        let isNew = page.data.isNew
+        if (existingEvents.includes(eventId)) {
+          isNew = false;
+        };
+
+        page.setData({
+          isNew: isNew
         });
       }
     });
