@@ -10,7 +10,7 @@ Page({
     const userId = app.globalData.userId;
 
     wx.request({
-      url: app.globalData.host + app.globalData.version + `users/${userId}`,
+      url: `${app.globalData.host}${app.globalData.version}users/${userId}`,
       method: 'GET',
       success(u) {
         const bookings = u.data.bookings;
@@ -24,14 +24,12 @@ Page({
 
   deleteBooking(e) {
     const data = e.currentTarget.dataset;
-    console.log(data)
 
     wx.request({
-      url: app.globalData.host + app.globalData.version + `bookings/${data}`,
-      // url: `http://localhost:3000/` + app.globalData.version + `events/${data}`,
+      url: `${app.globalData.host}${app.globalData.version}bookings/${data.booking}?event_id=${data.event}`,
       method: 'DELETE',
       success() {
-        wx.redirectTo({
+        wx.reLaunch({
           url: '/pages/activities/activities'
         });
       }

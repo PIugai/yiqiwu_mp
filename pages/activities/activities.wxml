@@ -4,7 +4,7 @@
     <view class="text-activity">{{booking.activity_type}}</view>
     <view class="location">{{booking.location}}</view>
     <view class="delete-button">
-      <button bindtap="deleteBooking" data-booking="{{booking.id}}">Delete</button>
+      <button bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}">Delete</button>
     </view>
   </view>
 </view>
