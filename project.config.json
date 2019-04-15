@@ -68,8 +68,6 @@
 					"name": "show",
 					"pathName": "pages/show/show",
 					"query": "",
-<<<<<<< HEAD
-=======
 					"scene": null
 				},
 				{
@@ -77,7 +75,6 @@
 					"name": "create",
 					"pathName": "pages/create/create",
 					"query": "",
->>>>>>> 41f7e48748aa20a491d57aad8f765f97e97be61d
 					"scene": null
 				}
 			]

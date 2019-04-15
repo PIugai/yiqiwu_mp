@@ -13,7 +13,7 @@ Page({
   onLoad: function (options) {
     let page = this;
     wx.request({
-      url: "http://yiqiwu.wogengapp.cn/api/v1/events",
+      url: app.globalData.host + app.globalData.version + `events`,
       // url: "http://localhost:3000/api/v1/events",
       method: 'GET',
       success(e) {
@@ -40,16 +40,6 @@ Page({
         that.setData({ latitude, longitude, speed, accuracy })
       },
     })
-      // wx.chooseLocation({
-      //   success: function (res) {
-      //     console.log(res)
-      //   }
-      // }),
-      // // wx.openLocation({
-      // //   latitude: 30.64242,
-      // //   longitude: 104.04311,
-      // //   scale: 28
-      // // })
   },
   markertap(e) {
     const mk = this.data.mk;
@@ -72,24 +62,23 @@ Page({
     });
   },
 
-selectMap() {
-  const map = true;
-  const list = false;
+  selectMap() {
+    const map = true;
+    const list = false;
 
-  this.setData({
-    map: map,
-    list: list
-  })
-},
+    this.setData({
+      map: map,
+      list: list
+    })
+  },
 
-selectList() {
-  const map = false;
-  const list = true;
+  selectList() {
+    const map = false;
+    const list = true;
 
-  this.setData({
-    map: map,
-    list: list
-  })
-}
-
+    this.setData({
+      map: map,
+      list: list
+    })
+  }
 })

@@ -8,7 +8,7 @@ Page({
     let page = this;
 
     wx.request({
-      url: `http://yiqiwu.wogengapp.cn/api/v1/events/${options.id}`,
+      url: app.globalData.host + app.globalData.version + `events/${options.id}`,
       // url: `http://localhost:3000/api/v1/events/${options.id}`,
       method: 'GET',
       success(e) {
@@ -34,7 +34,7 @@ Page({
       event_id: this.data.event.id
     }
     wx.request({
-      url: `https://yiqiwu.wogengapp.cn/api/v1/users/${app.globalData.userId}/bookings`,
+      url: app.globalData.host + app.globalData.version + `users/${app.globalData.userId}/bookings`,
        // url: `http://localhost:3000/api/v1/users/${app.globalData.userId}/bookings`,
       method: 'POST',
       data: booking,
