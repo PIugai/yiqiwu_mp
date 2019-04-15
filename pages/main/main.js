@@ -2,7 +2,7 @@ const app = getApp();
 Page({
 
   data: {
-    sc: '14',
+    sc: '18',
     map: true,
     selectionMade: false
   },
@@ -10,7 +10,7 @@ Page({
   onLoad: function (options) {
     let page = this;
     wx.request({
-      url: app.globalData.host + app.globalData.version + `events`,
+      url: `${app.globalData.host}${app.globalData.version}events`,
       method: 'GET',
       success(e) {
         const events = e.data.events;
@@ -34,10 +34,10 @@ Page({
         var accuracy = res.accuracy
 
         page.setData({
-          // lt: 31.223481,
-          // lg: 121.441167,
-          lt: latitude,
-          lg: longitude,
+          lt: 31.222142320234745,
+          lg: 121.44583483234406,
+          // lt: latitude,
+          // lg: longitude,
           speed: speed,
           accuracy: accuracy
         })
