@@ -60,7 +60,7 @@ Page({
       data: event,
       success(res) {
         console.log(res)
-        wx.redirectTo({
+        wx.reLaunch({
           url: '/pages/create/create',
         })
       }
