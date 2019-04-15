@@ -6,58 +6,56 @@
   
   <form bindsubmit="bindSubmit">
   <view class='box'>
-    <!-- <view class="user-input">
-      <view>
-        <image src="{{src}}"  bindtap='takePhoto' class='photo'></image>
-      </view>
-    </view> -->
 
     <view class="user-input">
-      <view class="text-area-wrap">
-        <textarea value="{{activity_type}}" style="input-size" placeholder="Type of activity" class="input-height" name="activity_type" maxlength="-1" auto-height />
-      </view>
-    </view>
-
-    <view class="section">
-      <view class="section__title">Activity selector</view>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-        <view class="picker">
-          Current selection: {{array[index]}}
+      <picker bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" name="activity_type">
+        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
+          Choose activity: {{array[index]}}
         </view>
       </picker>
     </view>
 
     <view class="user-input">
       <view class="text-area-wrap">
-        <textarea value="{{description}}" style="input-size" placeholder="Description of activity" class="input-height" name="description" maxlength="-1" auto-height />
+        <textarea value="{{description}}" style="input-size" placeholder="Describe activity" class="input-height" name="description" maxlength="-1" auto-height />
       </view>
     </view>
 
     <view class="user-input">
       <view class="text-area-wrap">
-        <textarea value="{{start_time}}" style="input-size" placeholder="Start time" class="input-height" name="start_time" maxlength="-1" auto-height />
+        <textarea value="{{capacity}}" style="input-size" placeholder="Maximum number of people" class="input-height" name="capacity" maxlength="-1" auto-height />
       </view>
     </view>
 
     <view class="user-input">
-      <view class="text-area-wrap">
-        <textarea value="{{end_time}}" style="input-size" placeholder="End time" class="input-height" name="end_time" maxlength="-1" auto-height />
-      </view>
+      <picker mode="date" value="{{date}}" start="2019-04-15" end="2025-01-01" bindchange="bindDateChange" name="date_only">
+        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
+          Select date: {{date}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="user-input">
+      <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only">
+        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
+          Start time: {{start_time_only}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="user-input">
+      <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only">
+        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
+          End time: {{end_time_only}}
+        </view>
+      </picker>
     </view>
 
     <view class="user-input">
       <view class="text-area-wrap">
-        <textarea value="{{location}}" style="input-size"placeholder="Location" class="input-height" name="location" maxlength="-1" auto-height />
+        <textarea value="{{name}}" bindtouchstart="bindOnTouchStart" style="input-size" placeholder="Location: {{name}}" class="input-height" name="location" maxlength="-1" auto-height />
       </view>
     </view>
-
-        <!-- <view class="user-input">
-            <checkbox-group bindchange="checkboxChange" class='boxcheck'>
-          <label class="checkbox" wx:for="{{items}}">
-          <view class='items'><checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}</view>
-          </label>
-        </checkbox-group>
-        </view> -->
 
     <button  style="padding: 15rpx 15rpx;" type="primary" form-type="submit" loading="{{loading}}">Submit</button>
     </view>
