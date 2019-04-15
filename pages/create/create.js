@@ -1,7 +1,49 @@
 const app = getApp();
 Page({
   data: {
+    array: ["Kites", "Dance", "Spinning Top", "Taichi", "Wushu", "Sword Dance", "Chinese Chess", "Water Calligraphy"],
+    objectArray: [
+      {
+        id: 0,
+        name: 'Kites'
+      },
+      {
+        id: 1,
+        name: 'Dance'
+      },
+      {
+        id: 2,
+        name: 'Spinning Top'
+      },
+      {
+        id: 3,
+        name: 'Taichi'
+      },
+      {
+        id: 4,
+        name: 'Wushu'
+      },
+       {
+        id: 5,
+        name: 'Sword Dance'
+      },
+      {
+        id: 6,
+        name: 'Chinese Chess'
+      },
+      {
+        id: 7,
+        name: 'Water Calligraphy'
+      }
+    ]
+  },
 
+  // binding the activity selector data
+  bindPickerChange: function (e) {
+    console.log('picker sent selection change, the value brought is', e.detail.value, e)
+    this.setData({
+      index: e.detail.value
+    })
   },
 
   onShow: function () {

@@ -18,6 +18,15 @@
       </view>
     </view>
 
+    <view class="section">
+      <view class="section__title">Activity selector</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          Current selection: {{array[index]}}
+        </view>
+      </picker>
+    </view>
+
     <view class="user-input">
       <view class="text-area-wrap">
         <textarea value="{{description}}" style="input-size" placeholder="Description of activity" class="input-height" name="description" maxlength="-1" auto-height />
