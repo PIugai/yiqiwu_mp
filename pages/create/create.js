@@ -9,7 +9,7 @@ Page({
     const userId = app.globalData.userId;
 
     wx.request({
-      url: app.globalData.host + app.globalData.version + `users/${userId}`,
+      url: `${app.globalData.host}${app.globalData.version}users/${userId}`,
       method: 'GET',
       success(u) {
         const events = u.data.events;
@@ -53,7 +53,7 @@ Page({
 
     console.log(33, event);
     wx.request({
-      url: app.globalData.host + app.globalData.version + `events`,
+      url: `${app.globalData.host}${app.globalData.version}events`,
       method: 'POST',
       data: event,
       success(res) {

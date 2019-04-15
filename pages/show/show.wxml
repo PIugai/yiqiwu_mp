@@ -36,8 +36,8 @@
     <map longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 25vh;" markers="{{mk}}"></map>
   </view>
 
-  <!-- check whether the event has already been booked -->
-  <view wx-if="{{isNew}}">
+  <!-- check whether the event has already been booked or is full -->
+  <view wx-if="{{(isNew) && (available)}}">
     <view class="btn">
       <button form-type="submit" bindtap="bindSubmit">Count me in!</button>
     </view>
@@ -46,4 +46,9 @@
   <view wx-if="{{!(isNew)}}">
     <text>You have already booked this event</text>
   </view>
+
+  <view wx-if="{{!(available)}}">
+    <text>This event is full</text>
+  </view>
+
 </view>
