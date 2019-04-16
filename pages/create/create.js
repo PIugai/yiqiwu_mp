@@ -92,7 +92,9 @@ Page({
       method: 'GET',
       success(u) {
         const events = u.data.events;
-
+        events.forEach(function (element) {
+          element.date = element.date.slice(0, -6)
+        });
         self.setData({
           events: events
         });
@@ -147,7 +149,7 @@ Page({
       "user_id": user_id,
       "latitude": latitude,
       "longitude": longitude,
-      "photo": "http://lc-OdCCcsLE.cn-n1.lcfile.com/dff75bbedb80715efa68/xjh6.jpg"
+      "photo": "http://lc-odcccsle.cn-n1.lcfile.com/398e4917a0a7040b0954/rm7.jpg"
     };
 
     wx.request({

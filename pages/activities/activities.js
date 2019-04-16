@@ -14,7 +14,10 @@ Page({
       method: 'GET',
       success(u) {
         const bookings = u.data.bookings;
-        console.log(bookings);
+        // console.log(bookings);
+        bookings.forEach(function (element) {
+          element.date = element.date.slice(0, -6)
+        });
         self.setData({
           bookings: bookings
         });
