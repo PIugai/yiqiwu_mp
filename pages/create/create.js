@@ -83,7 +83,7 @@ Page({
     })
   },
   
-  onShow: function () {
+  getBookings: function () {
     let self = this;
     const userId = app.globalData.userId;
 
@@ -98,6 +98,14 @@ Page({
         });
       }
     });
+  },
+
+  onLoad: function () {
+    this.getBookings();
+  },
+
+  onShow: function () {
+    this.getBookings();
   },
 
   // New Band Submission
