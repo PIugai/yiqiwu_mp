@@ -36,7 +36,7 @@ Page({
         name: 'Water Calligraphy'
       }
     ],
-    index: 0
+    index: 1
     // date: '2016-09-01',
     // time: '12:01'
   },
