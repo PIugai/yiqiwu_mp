@@ -1,11 +1,13 @@
-<view wx:for="{{bookings}}" wx:for-item="booking" wx:key="booking.event_id">
-  <view class="card">
-    <view class="text-id">BOOKING ID: {{booking.id}}</view>
-    <view class="text-activity">{{booking.activity_type}}</view>
-    <view class="location">{{booking.location}}</view>
-    <view class="delete-button">
-      <button bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}">Delete</button>
+<view class="card-container">
+  <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="booking.event_id">
+    <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{booking.photo}})'>
+      <view class="global-card-text-id">ID: {{booking.id}}</view>
+      <view class="global-card-text-activity">{{booking.activity_type}}</view>
+      <view class="global-card-location">@{{booking.location}}</view>
+      <!-- <view class="global-card-delete-button"> -->
+        <image src="/image/trash.png" bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}" class="trash"></image>
+      <!-- </view> -->
     </view>
   </view>
+  <view wx:if="{{bookings.length===0}}">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
 </view>
-<view wx:if="{{bookings.length===0}}">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>

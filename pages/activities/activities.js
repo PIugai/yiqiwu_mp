@@ -4,9 +4,9 @@ Page({
 
   },
 
-  onShow: function () {
+  getBookings: function () {
     let self = this;
-    
+
     const userId = app.globalData.userId;
 
     wx.request({
@@ -14,12 +14,20 @@ Page({
       method: 'GET',
       success(u) {
         const bookings = u.data.bookings;
-      
+        console.log(bookings);
         self.setData({
           bookings: bookings
         });
       }
     });
+  },
+
+  onLoad: function () {
+    this.getBookings();
+  },
+
+  onShow: function () {
+    this.getBookings();
   },
 
   deleteBooking(e) {
