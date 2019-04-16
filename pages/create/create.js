@@ -56,7 +56,6 @@ Page({
     })
   },
   bindPickerChange: function (e) {
-    console.log('picker sent selection change, the value brought is', e.detail.value, e)
     this.setData({
       index: e.detail.value
     })
@@ -70,7 +69,6 @@ Page({
         var longitude = res.longitude;
         var name = res.name;
         var address = res.address;
-        console.log("result of chooseLocation", res);
         page.setData({
           name: res.name,
           latitude: res.latitude,
@@ -106,8 +104,6 @@ Page({
       duration: 1500
     });
 
-    console.log(e);
-
     const app = getApp();
 
     var activity_type = e.detail.value.activity_type;
@@ -117,7 +113,6 @@ Page({
     var end_time = e.detail.value.date_only + " " + e.detail.value.end_time_only;
     var start_time = e.detail.value.date_only + " " + e.detail.value.start_time_only;
     var location = e.detail.value.location;
-    console.log("what is stored when there is no location name", location);
     // if (e.detail.value.location="") {
     //   var location = "Custom location";
     // } else {
@@ -141,17 +136,30 @@ Page({
       "longitude": longitude
     };
 
-    console.log(33, event);
     wx.request({
       url: `${app.globalData.host}${app.globalData.version}events`,
       method: 'POST',
       data: event,
       success(res) {
-        console.log(res)
         wx.reLaunch({
           url: '/pages/create/create',
         })
       }
     })
+  },
+
+  deleteEvent(e) {
+    const data = e.currentTarget.dataset;
+    console.log(data)
+
+    wx.request({
+      url: `${app.globalData.host}${app.globalData.version}events/${data.event}`,
+      method: 'DELETE',
+      success() {
+        wx.reLaunch({
+          url: '/pages/create/create'
+        });
+      }
+    });
   }
 })

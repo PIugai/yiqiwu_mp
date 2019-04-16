@@ -72,6 +72,7 @@
     <text>{{event.capacity}}</text> -->
     <!-- <text>{{event.start_time}}</text> -->
     <text>{{event.location}}</text>
+    <button bindtap="deleteEvent" data-event="{{event.id}}">Delete</button>
   </view>
 </view>
 
