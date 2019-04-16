@@ -11,7 +11,7 @@
 
 <view class="host">
   <image class="avatar" src="{{event.host_photo}}"></image>
-  <text style= "margin-left: 30%; "> {{event.host_name}}</text>
+  <text style= "margin-left: 36%; "> {{event.host_name}}</text>
 </view>
 
 <view class="block">
@@ -21,15 +21,15 @@
 <view class="mid-block">
   <view class="time">
     <image class="icon" src="/image/calendar.png"></image>
-    <text style="padding: 10%"> {{event.date}}</text>
+    <text style="padding: 12%"> {{event.date}}</text>
   </view>
   <view class="time">
     <image class="icon" src="/image/clock.png"></image>
-    <text style="padding: 10%"> {{event.start_time}} - {{event.end_time}}</text>
+    <text style="padding: 12%"> {{event.start_time}} - {{event.end_time}}</text>
   </view>
   <view class="capacity">
     <image class="icon-lg" src="/image/work-team.png"></image>
-    <text style="font-size: 25pt; padding: 20%">{{event.spots_filled}} / {{event.capacity}}</text>
+    <text style="padding: 25%">{{event.spots_filled}} / {{event.capacity}}</text>
   </view>
 </view>
 
@@ -56,12 +56,12 @@
   </view>
 
   <view class="warning-booked" wx-if="{{!(isNew)}}">
-    <text>Already booked</text>
+    <text  style="margin-right: 10%">Already booked</text>
     <image class="warning-icon-booked" src="/image/checked.png"></image>
   </view>
 
   <view class="warning-full" wx-if="{{!(available)}}">
-    <text>Event is full</text>
+    <text style="margin-right: 10%">Event is full</text>
      <image class="warning-icon-full" src="/image/exclamation-mark.png"></image>
   </view>
 

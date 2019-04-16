@@ -15,7 +15,7 @@
 .btn {
   flex-wrap: wrap;
   background-color:#f9d102;
-  font-size: 25pt;
+  font-size: 20pt;
 }
 
 .button-hover {
@@ -27,7 +27,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 display:block;
 flex-direction:row;
 justify-content:space-around;
-font-size: 30px;
+font-size: 28px;
 text-align: start;
 margin: 5%
 }
@@ -37,18 +37,18 @@ margin: 5%
 }
 
 .icon-lg {
-  height: 50px;
-  width: 50px;
+  height: 42px;
+  width: 32px;
 }
 
 .event-name {
   position: absolute;
   margin-right: 0;
   margin-left: 3%;
-  margin-top: -27%;
+  margin-top: -40%;
   text-align: initial;
-  font-size: 45px;
-  text-shadow: 3px 2px 2px rgb(66, 66, 66);
+  font-size: 36px;
+  text-shadow: 2px 1px 1px rgb(66, 66, 66);
   color: #f9d102;
   font-weight: bold;
 }
@@ -70,7 +70,7 @@ margin: 5%
   width: 50%;
 } */
 .host {
-  padding:8%;
+  padding:5%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 20pt;
 }
@@ -90,23 +90,22 @@ margin: 5%
 .avatar 
 {
   position: absolute;
-  margin-left: -4%;
-  width:70px;
-  height:70px;
+  margin-left: 12%;
+  width:60px;
+  height:60px;
   background:black;
   box-sizing:border-box;
   border-radius:50%;
-  margin-top: -5%;
+  margin-top: -4%;
 }
 
 .warning-booked {
   background-color: #f9d102;
   color: rgb(19, 158, 19);
-  font-size: 25pt;
+  font-size: 20pt;
   text-align: center;
   width: 100%;
   padding: 22px 0 22px 0;
-  border-radius: 10px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
@@ -114,11 +113,11 @@ margin: 5%
 .warning-full {
   background-color: #f9d102;
   color: #e50111;
-  font-size: 25pt;
+  font-size: 20pt;
   text-align: center;
   width: 100%;
   padding: 22px 0 22px 0;
-  border-radius: 10px;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
