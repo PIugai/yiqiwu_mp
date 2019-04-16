@@ -4,7 +4,8 @@
     "pages/main/main",
     "pages/show/show",
     "pages/activities/activities",
-    "pages/create/create"
+    "pages/create/create",
+    "pages/test/test"
     
   ],
   "window": {
