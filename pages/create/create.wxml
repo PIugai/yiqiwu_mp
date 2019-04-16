@@ -6,57 +6,58 @@
   <form bindsubmit="bindSubmit">
   <view class='box'>
 
-    <view class="user-input">
+    <!-- choose activity -->
+
+    <view class="text-area-wrap">
       <picker bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" name="activity_type">
-        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
-          Choose activity: {{array[index]}}
-        </view>
+      Choose activity: {{array[index]}}
       </picker>
     </view>
+   
+ 
+    <!-- describe*** -->
+    <view class="text-area-wrap">
+      <textarea value="{{description}}" placeholder="Describe activity:" class="" name="description"/>
+    </view>
+    
+    <!-- max participants*** -->
+    <view class="text-area-wrap">
+      <textarea value="{{capacity}}" placeholder="Max participants:" name="capacity" />
+    </view>
+    
 
-    <view class="user-input">
-      <view class="text-area-wrap">
-        <textarea value="{{description}}" style="input-size" placeholder="Describe activity" class="input-height" name="description" maxlength="-1" auto-height />
+    <!-- date -->
+    <picker mode="date" value="{{date}}" start="2019-04-19" end="2025-01-01" bindchange="bindDateChange" name="date_only">
+      <view class=" text-area-wrap ">
+        Select date: {{date}}
       </view>
-    </view>
+    </picker>
+    
 
-    <view class="user-input">
-      <view class="text-area-wrap">
-        <textarea value="{{capacity}}" style="input-size" placeholder="Max number of people" class="input-height" name="capacity" maxlength="-1" auto-height />
+    <!-- start time -->
+    <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only">
+      <view class=" text-area-wrap ">
+        Start time: {{start_time_only}}
       </view>
-    </view>
+    </picker>
+    
 
-    <view class="user-input">
-      <picker mode="date" value="{{date}}" start="2019-04-15" end="2025-01-01" bindchange="bindDateChange" name="date_only">
-        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
-          Select date: {{date}}
-        </view>
-      </picker>
-    </view>
-
-    <view class="user-input">
-      <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only">
-        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
-          Start time: {{start_time_only}}
-        </view>
-      </picker>
-    </view>
-
-    <view class="user-input">
-      <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only">
-        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
-          End time: {{end_time_only}}
-        </view>
-      </picker>
-    </view>
-
-    <view class="user-input">
-      <view class="text-area-wrap">
-        <textarea value="{{name}}" bindtouchstart="bindOnTouchStart" style="input-size" placeholder="Location: {{name}}" class="input-height" name="location" maxlength="-1" auto-height />
+    <!-- end time -->
+    <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only">
+      <view class=" text-area-wrap ">
+        End time: {{end_time_only}}
       </view>
-    </view>
+    </picker>
+    
 
-    <button  style="padding: 3rpx;" type="primary" form-type="submit" loading="{{loading}}">Submit</button>
+    <!-- location -->
+    <view class="text-area-wrap" bindtap="bindOnTouchStart" >
+      <text>Location: {{name}}</text>
+      <textarea value="{{name}}" name="location" style="font-size:1px;"></textarea>
+    </view>
+    
+
+    <button  style="margin-top:10px;" type="primary" form-type="submit" loading="{{loading}}">Submit</button>
     </view>
     </form>
 
