@@ -1,15 +1,91 @@
 const app = getApp();
 Page({
   data: {
-
+    array: ["Kites", "Dance", "Spinning Top", "Taichi", "Wushu", "Sword Dance", "Chinese Chess", "Water Calligraphy"],
+    objectArray: [
+      {
+        id: 0,
+        name: 'Kites'
+      },
+      {
+        id: 1,
+        name: 'Dance'
+      },
+      {
+        id: 2,
+        name: 'Spinning Top'
+      },
+      {
+        id: 3,
+        name: 'Taichi'
+      },
+      {
+        id: 4,
+        name: 'Wushu'
+      },
+       {
+        id: 5,
+        name: 'Sword Dance'
+      },
+      {
+        id: 6,
+        name: 'Chinese Chess'
+      },
+      {
+        id: 7,
+        name: 'Water Calligraphy'
+      }
+    ],
+    index: 0
+    // date: '2016-09-01',
+    // time: '12:01'
   },
-
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  bindStartTimeChange: function (e) {
+    this.setData({
+      start_time_only: e.detail.value
+    })
+  },
+  bindEndTimeChange: function (e) {
+    this.setData({
+      end_time_only: e.detail.value
+    })
+  },
+  bindPickerChange: function (e) {
+    console.log('picker sent selection change, the value brought is', e.detail.value, e)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  bindOnTouchStart: function () {
+    let page = this;
+    wx.chooseLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude;
+        var longitude = res.longitude;
+        var name = res.name;
+        var address = res.address;
+        console.log("result of chooseLocation", res);
+        page.setData({
+          name: res.name,
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+      }
+    })
+  },
+  
   onShow: function () {
     let self = this;
     const userId = app.globalData.userId;
 
     wx.request({
-      url: app.globalData.host + app.globalData.version + `users/${userId}`,
+      url: `${app.globalData.host}${app.globalData.version}users/${userId}`,
       method: 'GET',
       success(u) {
         const events = u.data.events;
@@ -36,29 +112,43 @@ Page({
 
     var activity_type = e.detail.value.activity_type;
     var description = e.detail.value.description;
-    var end_time = e.detail.value.end_time;
-    var start_time = e.detail.value.start_time;
+    var capacity = e.detail.value.capacity;
+    var spots_filled = 0;
+    var end_time = e.detail.value.date_only + " " + e.detail.value.end_time_only;
+    var start_time = e.detail.value.date_only + " " + e.detail.value.start_time_only;
     var location = e.detail.value.location;
+    console.log("what is stored when there is no location name", location);
+    // if (e.detail.value.location="") {
+    //   var location = "Custom location";
+    // } else {
+      var location = e.detail.value.location;
+    // };
     var user_id = app.globalData.userId;
+    var latitude = this.data.latitude;
+    var longitude = this.data.longitude;
 
     // Create new event/activity
     var event = {
       "activity_type": activity_type,
       "description": description,
+      "capacity": capacity,
+      "spots_filled": spots_filled,
       "end_time": end_time,
       "start_time": start_time,
       "location": location,
-      "user_id": user_id
+      "user_id": user_id,
+      "latitude": latitude,
+      "longitude": longitude
     };
 
     console.log(33, event);
     wx.request({
-      url: app.globalData.host + app.globalData.version + `events`,
+      url: `${app.globalData.host}${app.globalData.version}events`,
       method: 'POST',
       data: event,
       success(res) {
         console.log(res)
-        wx.redirectTo({
+        wx.reLaunch({
           url: '/pages/create/create',
         })
       }

@@ -2,16 +2,15 @@ const app = getApp();
 Page({
 
   data: {
-    sc: '14',
+    sc: '18',
     map: true,
-    selection_blank: true,
-    selection_true: false
+    selectionMade: false
   },
 
   onLoad: function (options) {
     let page = this;
     wx.request({
-      url: app.globalData.host + app.globalData.version + `events`,
+      url: `${app.globalData.host}${app.globalData.version}events`,
       method: 'GET',
       success(e) {
         const events = e.data.events;
@@ -27,7 +26,7 @@ Page({
     });
 
     wx.getLocation({    events: null,
-      type: 'wgs84', // **1
+      type: 'wgs84', 
       success: function (res) {
         var latitude = res.latitude
         var longitude = res.longitude
@@ -35,8 +34,10 @@ Page({
         var accuracy = res.accuracy
 
         page.setData({
-          lt: latitude,
-          lg: longitude,
+          lt: 31.222142320234745,
+          lg: 121.44583483234406,
+          // lt: latitude,
+          // lg: longitude,
           speed: speed,
           accuracy: accuracy
         })
@@ -44,19 +45,19 @@ Page({
     })
   },
   
+  // preview event when pin is tapped
   markertap(e) {
     const mk = this.data.mk;
     const event = mk.find(mk => mk.id === e.markerId)
-    const selection_blank = false
-    const selection_true = true
+    const selectionMade = true
 
     this.setData({
       event: event,
-      selection_blank: selection_blank,
-      selection_true: selection_true
+      selectionMade: selectionMade
     })
   },
 
+// navigate to show page
   showEvent(e) {
     const event_id = e.currentTarget.dataset.event;
 
@@ -65,23 +66,20 @@ Page({
     });
   },
 
+// toggle between map view and list view
   selectMap() {
     const map = true;
-    const list = false;
 
     this.setData({
-      map: map,
-      list: list
+      map: map
     })
   },
 
   selectList() {
     const map = false;
-    const list = true;
 
     this.setData({
-      map: map,
-      list: list
+      map: map
     })
   }
 })
