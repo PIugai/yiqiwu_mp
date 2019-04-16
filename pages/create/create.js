@@ -67,12 +67,17 @@ Page({
       success: function (res) {
         var latitude = res.latitude;
         var longitude = res.longitude;
-        var name = res.name;
+        if (res.name === "") {
+          var name = "Custom location";
+        } else {
+          var name = res.name;
+        };
+        // var name = res.name;
         var address = res.address;
         page.setData({
-          name: res.name,
-          latitude: res.latitude,
-          longitude: res.longitude
+          name: name,
+          latitude: latitude,
+          longitude: longitude
         })
       }
     })
@@ -113,11 +118,11 @@ Page({
     var end_time = e.detail.value.date_only + " " + e.detail.value.end_time_only;
     var start_time = e.detail.value.date_only + " " + e.detail.value.start_time_only;
     var location = e.detail.value.location;
-    // if (e.detail.value.location="") {
-    //   var location = "Custom location";
-    // } else {
+    if (e.detail.value.location==="") {
+      var location = "custom location";
+    } else {
       var location = e.detail.value.location;
-    // };
+    };
     var user_id = app.globalData.userId;
     var latitude = this.data.latitude;
     var longitude = this.data.longitude;
@@ -133,7 +138,8 @@ Page({
       "location": location,
       "user_id": user_id,
       "latitude": latitude,
-      "longitude": longitude
+      "longitude": longitude,
+      "photo": "http://lc-OdCCcsLE.cn-n1.lcfile.com/dff75bbedb80715efa68/xjh6.jpg"
     };
 
     wx.request({
