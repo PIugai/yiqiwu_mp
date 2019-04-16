@@ -76,4 +76,4 @@
   </view>
 </view>
 
-<view wx:if="{{events.length===0}}">After you create an activity, it will appear here</view>
+<view wx:if="{{events.length===0}}" style="margin:15px; font-size:13px;">After you create an activity, it will appear here</view>
