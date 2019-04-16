@@ -1,5 +1,4 @@
 <!-- form to make a new event starts here-->
-
 <view class="h2-header">Create new</view>
 
 <view class="form-container">
@@ -64,16 +63,17 @@
   </view>
 
 <!-- cards for events starts here -->
-
-<view wx:for="{{events}}" wx:for-item="event" wx:key="event.id">
-  <view class="" style="margin:15px;">
-    Event: <text>{{event.activity_type}} at </text>
-    <!-- <text>{{event.spots_filled}}</text>
-    <text>{{event.capacity}}</text> -->
-    <!-- <text>{{event.start_time}}</text> -->
-    <text>{{event.location}}</text>
-    <button bindtap="deleteEvent" data-event="{{event.id}}">Delete</button>
+<view class="card-container">
+  <view wx:for="{{events}}" wx:for-item="event" wx:key="event.id">
+    <view class="" style="margin:15px;">
+      Event: <text>{{event.activity_type}} at </text>
+      <!-- <text>{{event.spots_filled}}</text>
+      <text>{{event.capacity}}</text> -->
+      <!-- <text>{{event.start_time}}</text> -->
+      <text>{{event.location}}</text>
+      <button bindtap="deleteEvent" data-event="{{event.id}}">Delete</button>
+    </view>
   </view>
-</view>
 
-<view wx:if="{{events.length===0}}" style="margin:15px; font-size:13px;">After you create an activity, it will appear here</view>
+  <view wx:if="{{events.length===0}}" style="margin:15px; font-size:13px;">After you create an activity, it will appear here</view>
+</view>
