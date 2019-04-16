@@ -4,7 +4,8 @@ Page({
   data: {
     sc: '18',
     map: true,
-    selectionMade: false
+    selectionMade: false,
+    tab: true
   },
 
   onLoad: function (options) {

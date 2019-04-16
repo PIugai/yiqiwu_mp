@@ -1,10 +1,24 @@
-<view class="toggle-container">
-  <button type="default" hover-class="hover" size="mini" bindtap="selectMap" class="toggle-button">MAP</button>
-  <button type="default" hover-class="hover" size="mini" bindtap="selectList" class="toggle-button">LIST</button>
+<view class="navbar">
+ <CustomNav profilePic="/image/logo.png" >
+
+  <view wx:if="{{map}}">
+      <button type="default" hover-class="hover" size="mini" bindtap="selectList" class="toggle-button">LIST</button>
+  </view>
+
+  <view wx:if="{{!(map)}}">
+              <button type="default" hover-class="hover" size="mini" bindtap="selectMap" class="toggle-button">MAP</button>
+  </view>
+
+  
+
+ </CustomNav>
 </view>
+
+
 
 <view wx:if="{{map}}">
   <view class="map-container">
+  <!-- <button type="default" hover-class="hover" size="mini" bindtap="selectList" class="toggle-button">LIST</button> -->
     <map bindmarkertap="markertap" longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 72vh;" markers="{{mk}}"></map>
     <view wx:if="{{!(selectionMade)}}">
       <view class="display">
@@ -14,7 +28,9 @@
       </view>
     </view>
 
+
     <view wx:if="{{selectionMade}}">
+      <view class="list-container">
       <view class="display" bindtap="showEvent" data-event="{{event.id}}">
         <view class="text-id">EVENT ID: {{event.id}}</view>
         <view class="text-activity">{{event.activity_type}}</view>
@@ -23,11 +39,13 @@
           <text>{{event.spots_filled}} / {{event.capacity}}</text>
         </view> -->
       </view>
+      </view>
     </view>
   </view>
 </view>
 
 <view wx:if="{{!(map)}}">
+              <!-- <button type="default" hover-class="hover" size="mini" bindtap="selectMap" class="toggle-button">MAP</button> -->
   <view wx:for="{{mk}}" wx:for-item="event" wx:key="event.id" bindtap="showEvent" class="card" data-event="{{event.id}}">
     <view class="text-id">EVENT ID: {{event.id}}</view>
     <view class="text-activity">{{event.activity_type}}</view>
