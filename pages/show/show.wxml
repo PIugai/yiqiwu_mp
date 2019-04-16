@@ -1,54 +1,68 @@
-<view class="card" style="background-image: url('{{photo}}');"></view>
+<view class="card" style="background-image: url('{{event.photo}}'); opacity: 0.5;"></view>
 
 <!-- top card -->
 <view class="top-block">
-  <image class="avatar" src="{{event.host_photo}}"></image>
-
-  <view class="id">
-    <text>Host: {{event.host_name}}</text>
-  </view>
-
+  <!-- <image class="avatar" src="{{event.host_photo}}"></image> -->
   <view class="event-name">
-    <view>{{event.activity_type}} @ {{event.location}}</view>
+    <view>{{event.activity_type}}</view>
+    <view style="font-size: 25px">@{{event.location}}</view>
   </view>
 </view>
 
-<!-- middle details until bottom -->
-<view class="bot-block">
+<view class="host">
+  <image class="avatar" src="{{event.host_photo}}"></image>
+  <text style= "margin-left: 30%; "> {{event.host_name}}</text>
+</view>
 
+<view class="block">
+</view>
+
+
+<view class="mid-block">
   <view class="time">
-    <text>Date: {{event.date}}</text>
+    <image class="icon" src="/image/calendar.png"></image>
+    <text style="padding: 10%"> {{event.date}}</text>
   </view>
-
   <view class="time">
-    <text>Time: {{event.start_time}} - {{event.end_time}}</text>
+    <image class="icon" src="/image/clock.png"></image>
+    <text style="padding: 10%"> {{event.start_time}} - {{event.end_time}}</text>
   </view>
-
   <view class="capacity">
-    <text>Spots: {{event.spots_filled}} / {{event.capacity}}</text>
+    <image class="icon-lg" src="/image/work-team.png"></image>
+    <text style="font-size: 25pt; padding: 20%">{{event.spots_filled}} / {{event.capacity}}</text>
   </view>
+</view>
 
+
+<view class="block">
+</view>
+
+<view>
   <view class="description">
-    <text>{{event.description}}</text>
+    <text style="font-size: 17pt">{{event.description}}</text>
   </view>
+</view>
 
-  <view class="map-container">
-    <map longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 25vh;" markers="{{mk}}"></map>
-  </view>
-
+<view class="bot-block">
+ <view class="map-container">
+  <map longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 25vh;" markers="{{mk}}"></map>
+</view>
+ 
   <!-- check whether the event has already been booked or is full -->
   <view wx-if="{{(isNew) && (available)}}">
-    <view class="btn">
-      <button form-type="submit" bindtap="bindSubmit">Count me in!</button>
-    </view>
+  <view class="btn">
+  <button form-type="submit" bindtap="bindSubmit" class="btn">Count me in</button>
+</view>
   </view>
 
-  <view wx-if="{{!(isNew)}}">
-    <text>You have already booked this event</text>
+  <view class="warning-booked" wx-if="{{!(isNew)}}">
+    <text>Already booked</text>
+    <image class="warning-icon-booked" src="/image/checked.png"></image>
   </view>
 
-  <view wx-if="{{!(available)}}">
-    <text>This event is full</text>
+  <view class="warning-full" wx-if="{{!(available)}}">
+    <text>Event is full</text>
+     <image class="warning-icon-full" src="/image/exclamation-mark.png"></image>
   </view>
 
 </view>
