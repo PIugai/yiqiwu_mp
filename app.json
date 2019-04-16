@@ -6,13 +6,16 @@
     "pages/activities/activities",
     "pages/create/create",
     "pages/main-filter/main-filter",
-    "pages/main-filter2/main-filter2"
+    "pages/main-filter2/main-filter2",
+    "pages/test/test",
+    "components/custom-nav/custom-nav"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#920106",
     "navigationBarTitleText": "175",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "permission": {
     "scope.userLocation": {
@@ -44,6 +47,5 @@
         "selectedIconPath": "image/star-selected.png"
       }
     ]
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

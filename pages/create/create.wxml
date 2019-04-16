@@ -1,63 +1,63 @@
 <!-- form to make a new event starts here-->
-
-<view class="h2-header">Create new</view>
+<!-- <view class="h2-header">Create new</view> -->
 
 <view class="form-container">
   
   <form bindsubmit="bindSubmit">
   <view class='box'>
 
-    <view class="user-input">
+    <!-- choose activity -->
+
+    <view class="text-area-wrap">
       <picker bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" name="activity_type">
-        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
-          Choose activity: {{array[index]}}
-        </view>
+      Choose activity: {{array[index]}}
       </picker>
     </view>
+   
+ 
+    <!-- describe*** -->
+    <view class="text-area-wrap">
+      <textarea value="{{description}}" placeholder="Describe activity:" class="" name="description"/>
+    </view>
+    
+    <!-- max participants*** -->
+    <view class="text-area-wrap">
+      <textarea value="{{capacity}}" placeholder="Max participants:" name="capacity" />
+    </view>
+    
 
-    <view class="user-input">
-      <view class="text-area-wrap">
-        <textarea value="{{description}}" style="input-size" placeholder="Describe activity" class="input-height" name="description" maxlength="-1" auto-height />
+    <!-- date -->
+    <picker mode="date" value="{{date}}" start="2019-04-19" end="2025-01-01" bindchange="bindDateChange" name="date_only">
+      <view class=" text-area-wrap ">
+        Select date: {{date}}
       </view>
-    </view>
+    </picker>
+    
 
-    <view class="user-input">
-      <view class="text-area-wrap">
-        <textarea value="{{capacity}}" style="input-size" placeholder="Maximum number of people" class="input-height" name="capacity" maxlength="-1" auto-height />
+    <!-- start time -->
+    <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only">
+      <view class=" text-area-wrap ">
+        Start time: {{start_time_only}}
       </view>
-    </view>
+    </picker>
+    
 
-    <view class="user-input">
-      <picker mode="date" value="{{date}}" start="2019-04-15" end="2025-01-01" bindchange="bindDateChange" name="date_only">
-        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
-          Select date: {{date}}
-        </view>
-      </picker>
-    </view>
-
-    <view class="user-input">
-      <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only">
-        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
-          Start time: {{start_time_only}}
-        </view>
-      </picker>
-    </view>
-
-    <view class="user-input">
-      <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only">
-        <view class="picker text-area-wrap input-label" style="color:#4c4c4c;font-weight: 310;">
-          End time: {{end_time_only}}
-        </view>
-      </picker>
-    </view>
-
-    <view class="user-input">
-      <view class="text-area-wrap">
-        <textarea value="{{name}}" bindtouchstart="bindOnTouchStart" style="input-size" placeholder="Location: {{name}}" class="input-height" name="location" maxlength="-1" auto-height />
+    <!-- end time -->
+    <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only">
+      <view class=" text-area-wrap ">
+        End time: {{end_time_only}}
       </view>
-    </view>
+    </picker>
+    
 
-    <button  style="padding: 15rpx 15rpx;" type="primary" form-type="submit" loading="{{loading}}">Submit</button>
+    <!-- location -->
+    <view class="text-area-wrap" bindtap="bindOnTouchStart" >
+      <text>Location: {{name}}</text>
+      <textarea value="{{name}}" name="location" style="font-size:1px;"></textarea>
+    </view>
+    
+
+    <button  style="margin-top:10px;" type="primary" form-type="submit" loading="{{loading}}">Submit</button>
     </view>
     </form>
 
@@ -65,15 +65,27 @@
 
 <!-- cards for events starts here -->
 
-<view wx:for="{{events}}" wx:for-item="event" wx:key="event.id">
-  <view class="" style="margin:15px;">
-    Event: <text>{{event.activity_type}} at </text>
-    <!-- <text>{{event.spots_filled}}</text>
-    <text>{{event.capacity}}</text> -->
-    <!-- <text>{{event.start_time}}</text> -->
-    <text>{{event.location}}</text>
-    <button bindtap="deleteEvent" data-event="{{event.id}}">Delete</button>
+<view class="card-container">
+  <view wx:for="{{events}}" wx:for-item="event" wx:key="event.id">
+    <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{event.photo}})'>
+      <view class="card-mid-block">
+        <view class="card-info">
+          <image class="card-icon" src="/image/calendar.png"></image>
+          <text> {{event.date}}</text>
+        </view>
+        <view class="card-info">
+          <image class="card-icon" src="/image/clock.png"></image>
+          <text>{{event.start_time}}</text>
+        </view>
+        <view class="card-info">
+          <image class="card-icon" src="/image/work-team.png"></image>
+          <text>{{event.spots_filled}} / {{event.capacity}}</text>
+        </view>
+      </view>
+      <view class="global-card-text-activity">{{event.activity_type}}</view>
+      <view class="global-card-location">@{{event.location}}</view>
+      <image src="/image/trash.png" bindtap="deleteEvent" data-event="{{event.id}}" class="trash"></image>
+    </view>
   </view>
+  <view wx:if="{{events.length===0}}" class="assist-text">After you create an activity, it will appear here</view>
 </view>
-
-<view wx:if="{{events.length===0}}">After you create an activity, it will appear here</view>

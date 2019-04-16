@@ -1,0 +1,3 @@
+<view class="navbar">
+ <CustomNav profilePic="/image/logo.png" />
+</view>

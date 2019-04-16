@@ -36,7 +36,7 @@ Page({
         name: 'Water Calligraphy'
       }
     ],
-    index: 0
+    index: 1
     // date: '2016-09-01',
     // time: '12:01'
   },
@@ -67,18 +67,23 @@ Page({
       success: function (res) {
         var latitude = res.latitude;
         var longitude = res.longitude;
-        var name = res.name;
+        if (res.name === "") {
+          var name = "Custom location";
+        } else {
+          var name = res.name;
+        };
+        // var name = res.name;
         var address = res.address;
         page.setData({
-          name: res.name,
-          latitude: res.latitude,
-          longitude: res.longitude
+          name: name,
+          latitude: latitude,
+          longitude: longitude
         })
       }
     })
   },
   
-  onShow: function () {
+  getBookings: function () {
     let self = this;
     const userId = app.globalData.userId;
 
@@ -87,12 +92,22 @@ Page({
       method: 'GET',
       success(u) {
         const events = u.data.events;
-
+        events.forEach(function (element) {
+          element.date = element.date.slice(0, -6)
+        });
         self.setData({
           events: events
         });
       }
     });
+  },
+
+  onLoad: function () {
+    this.getBookings();
+  },
+
+  onShow: function () {
+    this.getBookings();
   },
 
   // New Band Submission
@@ -113,16 +128,26 @@ Page({
     var end_time = e.detail.value.date_only + " " + e.detail.value.end_time_only;
     var start_time = e.detail.value.date_only + " " + e.detail.value.start_time_only;
     var location = e.detail.value.location;
-    // if (e.detail.value.location="") {
-    //   var location = "Custom location";
-    // } else {
+    if (e.detail.value.location==="") {
+      var location = "custom location";
+    } else {
       var location = e.detail.value.location;
-    // };
+    };
     var user_id = app.globalData.userId;
     var latitude = this.data.latitude;
     var longitude = this.data.longitude;
 
     // Create new event/activity
+    var photoArray = [
+      "http://lc-odcccsle.cn-n1.lcfile.com/398e4917a0a7040b0954/rm7.jpg",
+      "http://lc-OdCCcsLE.cn-n1.lcfile.com/84a06e45fb6b09ea1989/jing3.jpg",
+      "http://lc-OdCCcsLE.cn-n1.lcfile.com/ce4b9e9c30044869fee4/jing4.jpg",
+      "http://lc-OdCCcsLE.cn-n1.lcfile.com/2b06abe54ac0922fb8c8/zh5.jpg",
+      "http://lc-OdCCcsLE.cn-n1.lcfile.com/2d91a7b7b04b0b8aaea9/zh1.jpg"
+    ];
+    var randomIndex = Math.floor(Math.random() * photoArray.length);
+    var randomPhoto = photoArray[randomIndex];
+    console.log("print the random photo", randomPhoto);
     var event = {
       "activity_type": activity_type,
       "description": description,
@@ -133,7 +158,8 @@ Page({
       "location": location,
       "user_id": user_id,
       "latitude": latitude,
-      "longitude": longitude
+      "longitude": longitude,
+      "photo": randomPhoto
     };
 
     wx.request({

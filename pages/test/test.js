@@ -2,10 +2,38 @@ const app = getApp();
 Page({
 
   data: {
+    imgUrls: [
+      'https://www.lbhf.gov.uk/sites/default/files/newsarticle/older-lady-1132px.jpg',
+      'https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2017/03/07101859/gettyimages-510224104.jpg',
+      'https://im0-tub-com.yandex.net/i?id=efef2177dad4eb0e3c175ec88163a625&n=13'
+    ],
+    indicatorDots: false,
+    autoplay: true,
+    interval: 5000,
+    duration: 5000,
     sc: '18',
     map: true,
-    selectionMade: false,
-    tab: true
+    selectionMade: false
+  },
+  changeIndicatorDots: function (e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay: function (e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange: function (e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange: function (e) {
+    this.setData({
+      duration: e.detail.value
+    })
   },
 
   onLoad: function (options) {
@@ -15,6 +43,7 @@ Page({
       method: 'GET',
       success(e) {
         const events = e.data.events;
+        console.log(events)
         events.forEach((event) => {
           event["height"] = 60;
           event["width"] = 50;
@@ -26,8 +55,9 @@ Page({
       }
     });
 
-    wx.getLocation({    events: null,
-      type: 'wgs84', 
+    wx.getLocation({
+      events: null,
+      type: 'wgs84',
       success: function (res) {
         var latitude = res.latitude
         var longitude = res.longitude
@@ -45,10 +75,11 @@ Page({
       },
     })
   },
-  
+
   // preview event when pin is tapped
   markertap(e) {
     const mk = this.data.mk;
+    console.log(mk)
     const event = mk.find(mk => mk.id === e.markerId)
     const selectionMade = true
 
@@ -56,9 +87,11 @@ Page({
       event: event,
       selectionMade: selectionMade
     })
+
+    setTimeout
   },
 
-// navigate to show page
+  // navigate to show page
   showEvent(e) {
     const event_id = e.currentTarget.dataset.event;
 
@@ -67,7 +100,7 @@ Page({
     });
   },
 
-// toggle between map view and list view
+  // toggle between map view and list view
   selectMap() {
     const map = true;
 
