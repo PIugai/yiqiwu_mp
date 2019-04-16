@@ -88,3 +88,12 @@
   justify-content: center;
   text-shadow: none;
 }
+.assist-text {
+  margin:15px;
+  font-size:15px;
+  background-color:white;
+  text-align:center;
+  padding:8px;
+  border-radius:5px;
+  opacity: 0.8;
+}

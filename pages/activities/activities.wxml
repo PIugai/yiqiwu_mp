@@ -20,5 +20,5 @@
       <image src="/image/trash.png" bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}" class="trash"></image>
     </view>
   </view>
-  <view wx:if="{{bookings.length===0}}">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
+  <view wx:if="{{bookings.length===0}}" class="assist-text">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
 </view>
