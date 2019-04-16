@@ -138,6 +138,16 @@ Page({
     var longitude = this.data.longitude;
 
     // Create new event/activity
+    var photoArray = [
+      "http://lc-odcccsle.cn-n1.lcfile.com/398e4917a0a7040b0954/rm7.jpg",
+      "http://lc-OdCCcsLE.cn-n1.lcfile.com/84a06e45fb6b09ea1989/jing3.jpg",
+      "http://lc-OdCCcsLE.cn-n1.lcfile.com/ce4b9e9c30044869fee4/jing4.jpg",
+      "http://lc-OdCCcsLE.cn-n1.lcfile.com/2b06abe54ac0922fb8c8/zh5.jpg",
+      "http://lc-OdCCcsLE.cn-n1.lcfile.com/2d91a7b7b04b0b8aaea9/zh1.jpg"
+    ];
+    var randomIndex = Math.floor(Math.random() * photoArray.length);
+    var randomPhoto = photoArray[randomIndex];
+    console.log("print the random photo", randomPhoto);
     var event = {
       "activity_type": activity_type,
       "description": description,
@@ -149,7 +159,7 @@ Page({
       "user_id": user_id,
       "latitude": latitude,
       "longitude": longitude,
-      "photo": "http://lc-odcccsle.cn-n1.lcfile.com/398e4917a0a7040b0954/rm7.jpg"
+      "photo": randomPhoto
     };
 
     wx.request({

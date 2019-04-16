@@ -87,5 +87,5 @@
       <image src="/image/trash.png" bindtap="deleteEvent" data-event="{{event.id}}" class="trash"></image>
     </view>
   </view>
-  <view wx:if="{{events.length===0}}" style="margin:15px; font-size:13px;">After you create an activity, it will appear here</view>
+  <view wx:if="{{events.length===0}}" class="assist-text">After you create an activity, it will appear here</view>
 </view>
