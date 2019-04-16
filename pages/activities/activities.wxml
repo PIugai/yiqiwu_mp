@@ -1,3 +1,8 @@
+<view class="navbar">
+ <CustomNav profilePic="/image/logo.png" />
+ 
+</view>
+
 <view class="card-container">
   <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="booking.event_id">
     <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{booking.photo}})'>

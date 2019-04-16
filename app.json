@@ -5,14 +5,16 @@
     "pages/show/show",
     "pages/activities/activities",
     "pages/create/create",
-    "pages/test/test"
+    "pages/test/test",
+    "components/custom-nav/custom-nav"
     
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "175",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "permission": {
     "scope.userLocation": {
@@ -44,6 +46,5 @@
         "selectedIconPath": "image/star-selected.png"
       }
     ]
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }
