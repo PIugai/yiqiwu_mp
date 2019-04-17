@@ -8,10 +8,9 @@
   justify-content: space-between;
   padding: 20rpx 0;
   box-sizing: border-box;
-  background-color: #920106;
   color: rgba(130, 130, 130, 1); 
   font-size: 30rpx;
-
+  background-color: #B70107;
 } 
 
 textarea {

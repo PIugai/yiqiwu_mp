@@ -5,7 +5,7 @@
       <view>
         <image bindtap="goBack" id='back' mode="aspectFit" src="/image/back.png" />
       </view>
-      <image id='logo' mode="aspectFit" src="/image/logo.png" />
+      <image id='logo' mode="aspectFit" src="/image/logo_s.png" />
     </view>
   </CustomNav>
 </view>
