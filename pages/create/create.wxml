@@ -73,7 +73,7 @@
 
 <view class="card-container">
   <view wx:for="{{events}}" wx:for-item="event" wx:key="event.id">
-    <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{event.photo}})'>
+    <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url({{event.photo}})'>
       <view class="card-mid-block">
         <view class="card-info">
           <image class="card-icon" src="/image/calendar.png"></image>
