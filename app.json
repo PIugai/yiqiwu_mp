@@ -47,5 +47,6 @@
         "selectedIconPath": "image/star-selected.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

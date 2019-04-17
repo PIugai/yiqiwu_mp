@@ -7,7 +7,7 @@ Page({
     filter: ["Kites", "Dance", "Spinning Top", "Taichi", "Wushu", "Sword Dance", "Chinese Chess", "Water Calligraphy"],
     showFilter: false,
     wxFilter: [
-      { activity: "All", active: "button-filter-inactive", src: "/image/filter-all.png" },
+      { activity: "All", active: "button-filter", src: "/image/filter-all.png" },
       { activity: "Kites", active: "button-filter-inactive", src: "/image/filter-kite.png" },
       { activity: "Dance", active: "button-filter-inactive", src: "/image/filter-dance2.png" },
       { activity: "Spinning Top", active: "button-filter-inactive", src: "/image/filter-tops.png" },
