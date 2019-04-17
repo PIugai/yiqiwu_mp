@@ -11,7 +11,7 @@
 .card-container {
   height: 100vh;
   width: 100%;
-  background-color: #920106;
+  background-color:  #B70107;
   padding-top: 1px;
   padding-left: 2px;
   padding-right: 2px;
@@ -43,7 +43,7 @@
 .global-card-location {
   margin-top: 5px;
   text-align: center;
-  ext-shadow: 2px 2px 3px rgba(0,0,0,0.8);
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.8);
 }
 
 .trash {
