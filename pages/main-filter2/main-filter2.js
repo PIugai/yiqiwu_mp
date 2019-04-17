@@ -1,11 +1,9 @@
 const app = getApp();
 Page({
-
   data: {
     sc: '18',
     map: true,
     selectionMade: false,
-    tab: true,
     filter: ["Kites", "Dance", "Spinning Top", "Taichi", "Wushu", "Sword Dance", "Chinese Chess", "Water Calligraphy"],
     showFilter: false,
     wxFilter: [
@@ -18,11 +16,12 @@ Page({
       { activity: "Sword Dance", active: "button-filter-inactive", src: "/image/filter-sword_dance.png" },
       { activity: "Chinese Chess", active: "button-filter-inactive", src: "/image/filter-chinese_chess.png" },
       { activity: "Water Calligraphy", active: "button-filter-inactive", src: "/image/filter-water_calligraphy.png" }
-    ]
+    ],
   },
 
   onLoad: function (options) {
     let page = this;
+
     wx.request({
       url: `${app.globalData.host}${app.globalData.version}events`,
       method: 'GET',
@@ -31,7 +30,6 @@ Page({
         events.forEach((event) => {
           event["height"] = 60;
           event["width"] = 50;
-          event["iconPath"] = event.iconPathYellow;
         });
 
         page.setData({
@@ -43,7 +41,7 @@ Page({
 
     wx.getLocation({
       events: null,
-      type: 'wgs84', 
+      type: 'wgs84',
       success: function (res) {
         var latitude = res.latitude
         var longitude = res.longitude
@@ -61,30 +59,20 @@ Page({
       },
     })
   },
-  
+
   // preview event when pin is tapped
   markertap(e) {
-    const filteredEvents = this.data.filteredEvents;
-    let event = filteredEvents.find(filteredEvents => filteredEvents.id === e.markerId)
+    const events = this.data.events;
+    const event = events.find(events => events.id === e.markerId)
     const selectionMade = true
-    event.iconPath = event.iconPathRed
-    for (var i = filteredEvents.length - 1; i >= 0; i--) {
-      if (filteredEvents[i].id === event.id) {
-        filteredEvents[i].iconPath = event.iconPath;
-      } else {
-        filteredEvents[i].iconPath = filteredEvents[i].iconPathYellow;
-      }
-    };
 
     this.setData({
       event: event,
-      selectionMade: selectionMade,
-      filteredEvents: filteredEvents
+      selectionMade: selectionMade
     })
-
   },
 
-// navigate to show page
+  // navigate to show page
   showEvent(e) {
     const event_id = e.currentTarget.dataset.event;
 
@@ -93,7 +81,7 @@ Page({
     });
   },
 
-// toggle between map view and list view
+  // toggle between map view and list view
   selectMap() {
     const map = true;
 
@@ -142,7 +130,7 @@ Page({
 
     // change class of filter buttons when selected / deselected
     const wxFilter = this.data.wxFilter;
-    for (var i = wxFilter.length - 1; i >= 0; i--) {
+    for (var i = wxFilter.length - 1; i>=0; i--) {
       if (activity === "All") {
         wxFilter[i].active = "button-filter-inactive";
         wxFilter[0].active = "button-filter"

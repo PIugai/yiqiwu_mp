@@ -16,10 +16,11 @@
 	"libVersion": "2.6.5",
 	"appid": "wx5a0df5897b522ab3",
 	"projectname": "yiqiwu_mp",
+	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"isGameTourist": false,
+	"scripts": {},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -36,11 +37,10 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 1,
 			"list": [
 				{
 					"id": 0,
@@ -79,8 +79,15 @@
 				},
 				{
 					"id": -1,
-					"name": "test",
-					"pathName": "pages/test/test",
+					"name": "main-filter",
+					"pathName": "pages/main-filter/main-filter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main-filter2",
+					"pathName": "pages/main-filter2/main-filter2",
 					"query": "",
 					"scene": null
 				}
