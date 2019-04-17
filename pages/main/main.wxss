@@ -92,6 +92,7 @@
 .map-container {
   height: 100vh;
   overflow: hidden;
+  z-index: -500;
 }
 .cardtext-placeholder {
   font-size: 20pt;
