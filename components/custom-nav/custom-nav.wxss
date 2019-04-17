@@ -1,11 +1,11 @@
 /* components/custom-nav/custom-nav.wxss */
 .profile-container > image {
-width:50px;
-height:50px;
-margin:37px 0 0 19px;
-position:absolute;
-margin-top:10%;
-margin-left:42%;
+width:100px;
+  height:100px;
+  margin:37px 0 0 19px;
+  position:absolute;
+  margin-top:4%;
+  margin-left:36%;
 }
 
 .nav-outer-container {
