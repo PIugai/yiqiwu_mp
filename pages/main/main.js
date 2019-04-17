@@ -13,15 +13,15 @@ Page({
     filter: ["Kites", "Dance", "Spinning Top", "Taichi", "Wushu", "Sword Dance", "Chinese Chess", "Water Calligraphy"],
     showFilter: false,
     wxFilter: [
-      { activity: "All", active: "button-filter", src: "/image/filter-all.png" },
-      { activity: "Kites", active: "button-filter-inactive", src: "/image/filter-kite.png" },
-      { activity: "Dance", active: "button-filter-inactive", src: "/image/filter-dance2.png" },
-      { activity: "Spinning Top", active: "button-filter-inactive", src: "/image/filter-tops.png" },
-      { activity: "Taichi", active: "button-filter-inactive", src: "/image/filter-taichi.png" },
-      { activity: "Wushu", active: "button-filter-inactive", src: "/image/filter-wushu.png" },
-      { activity: "Sword Dance", active: "button-filter-inactive", src: "/image/filter-sword_dance.png" },
-      { activity: "Chinese Chess", active: "button-filter-inactive", src: "/image/filter-chinese_chess.png" },
-      { activity: "Water Calligraphy", active: "button-filter-inactive", src: "/image/filter-water_calligraphy.png" }
+      { activity: "All", active: "", src: "/image/filter-all.png" },
+      { activity: "Kites", active: "-inactive", src: "/image/filter-kite.png" },
+      { activity: "Dance", active: "-inactive", src: "/image/filter-dance2.png" },
+      { activity: "Spinning Top", active: "-inactive", src: "/image/filter-tops.png" },
+      { activity: "Taichi", active: "-inactive", src: "/image/filter-taichi.png" },
+      { activity: "Wushu", active: "-inactive", src: "/image/filter-wushu.png" },
+      { activity: "Sword Dance", active: "-inactive", src: "/image/filter-sword_dance.png" },
+      { activity: "Chinese Chess", active: "-inactive", src: "/image/filter-chinese_chess.png" },
+      { activity: "Water Calligraphy", active: "-inactive", src: "/image/filter-water_calligraphy.png" }
     ]
   },
 
@@ -185,12 +185,12 @@ Page({
     const wxFilter = this.data.wxFilter;
     for (var i = wxFilter.length - 1; i >= 0; i--) {
       if (activity === "All") {
-        wxFilter[i].active = "button-filter-inactive";
-        wxFilter[0].active = "button-filter"
+        wxFilter[i].active = "-inactive";
+        wxFilter[0].active = ""
       } else if (filter.includes(wxFilter[i].activity)) {
-        wxFilter[i].active = "button-filter";
+        wxFilter[i].active = "";
       } else {
-        wxFilter[i].active = "button-filter-inactive";
+        wxFilter[i].active = "-inactive";
       };
     };
 

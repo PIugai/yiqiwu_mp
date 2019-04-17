@@ -6,7 +6,7 @@
 .filter-container {
   display: flex;
   flex-wrap: wrap;
-  width: 370px;
+  width: 97%;
   justify-content: center;  
   align-items: center;
   padding: 0px;
@@ -14,7 +14,7 @@
   z-index: 9999;
   animation: filter-card 2s ease;
   animation-fill-mode: forwards;
-  top: 100px;
+  top: 125px;
   left: 3%;
 }
 @keyframes filter-card {
@@ -27,8 +27,8 @@
 }
 .button-filter {
   display: flex;
-  width: 100px;
-  height: 100px;
+  width: 19vw;
+  height: 19vw;
   align-items: center;
   justify-content: center;
   padding: 0px;
@@ -39,8 +39,8 @@
 }
 .button-filter-inactive {
   display: flex;
-  width: 100px;
-  height: 100px;
+  width: 19vw;
+  height: 19vw;
   align-items: center;
   justify-content: center;
   padding: 0px;
@@ -48,11 +48,12 @@
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
   background-color: white;
   opacity: 0.7;
-  border: none;
+  /* border: none; */
+  border: solid 8px white;
 }
 .image-filter {
-  width: 80px;
-  height: 80px;
+  width: 19vw;
+  height: 19vw;
 }
 .button-filter-toggle {
   display: flex;

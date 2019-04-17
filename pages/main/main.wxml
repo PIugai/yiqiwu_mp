@@ -38,7 +38,7 @@
 
           <cover-view class="control" wx:if="{{showFilter}}">
             <cover-view class="filter-container">
-              <cover-view wx:for="{{wxFilter}}" wx:for-item="button" class="{{button.active}}" >
+              <cover-view wx:for="{{wxFilter}}" wx:for-item="button" class="button-filter{{button.active}}" >
                 <cover-image bindtap="filterActivity" data-activity="{{button.activity}}" src="{{button.src}}" class="image-filter"></cover-image>
               </cover-view>
             </cover-view>
