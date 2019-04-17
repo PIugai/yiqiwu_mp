@@ -20,6 +20,11 @@
       </picker>
     </view>
    
+    <!-- location -->
+    <view class="text-area-wrap" bindtap="bindOnTouchStart" >
+      <text>Location: {{name}}</text>
+      <textarea value="{{name}}" name="location" style="font-size:1px;width:1px;height:1px;"></textarea>
+    </view>
  
     <!-- describe*** -->
     <view class="text-area-wrap">
@@ -39,28 +44,24 @@
       </view>
     </picker>
     
-
+    <view style="display:flex;">
     <!-- start time -->
-    <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only">
-      <view class=" text-area-wrap ">
+    <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only" style="width:50%">
+      <view class=" text-area-wrap">
         Start time: {{start_time_only}}
       </view>
     </picker>
     
 
     <!-- end time -->
-    <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only">
-      <view class=" text-area-wrap ">
+    <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only" style="width:50%;">
+      <view class=" text-area-wrap">
         End time: {{end_time_only}}
       </view>
     </picker>
-    
-
-    <!-- location -->
-    <view class="text-area-wrap" bindtap="bindOnTouchStart" >
-      <text>Location: {{name}}</text>
-      <textarea value="{{name}}" name="location" style="font-size:1px;"></textarea>
     </view>
+
+    
     
 
     <button  style="margin-top:10px;" type="primary" form-type="submit" loading="{{loading}}">Submit</button>
