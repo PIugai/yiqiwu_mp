@@ -28,6 +28,9 @@ Page({
       method: 'GET',
       success(e) {
         const events = e.data.events;
+        events.forEach(function (element) {
+          element.date = element.date.slice(0, -6)
+        });
         events.forEach((event) => {
           event["height"] = 60;
           event["width"] = 50;
