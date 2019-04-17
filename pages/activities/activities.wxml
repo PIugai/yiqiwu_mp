@@ -2,27 +2,29 @@
 <CustomNav profilePic="/image/logo_s.png" />
 </view>
 
-<view class="card-container">
-  <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="booking.event_id">
-    <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url({{booking.photo}})'>
-      <view class="card-mid-block">
-        <view class="card-info">
-          <image class="card-icon" src="/image/calendar.png"></image>
-          <text> {{booking.date}}</text>
+<view class="page-container">
+  <view class="card-container">
+    <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="booking.event_id">
+      <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url({{booking.photo}})'>
+        <view class="card-mid-block">
+          <view class="card-info">
+            <image class="card-icon" src="/image/calendar.png"></image>
+            <text> {{booking.date}}</text>
+          </view>
+          <view class="card-info">
+            <image class="card-icon" src="/image/clock.png"></image>
+            <text>{{booking.start_time}}</text>
+          </view>
+          <view class="card-info">
+            <image class="card-icon" src="/image/work-team.png"></image>
+            <text>{{booking.spots_filled}} / {{booking.capacity}}</text>
+          </view>
         </view>
-        <view class="card-info">
-          <image class="card-icon" src="/image/clock.png"></image>
-          <text>{{booking.start_time}}</text>
-        </view>
-        <view class="card-info">
-          <image class="card-icon" src="/image/work-team.png"></image>
-          <text>{{booking.spots_filled}} / {{booking.capacity}}</text>
-        </view>
+        <view class="global-card-text-activity">{{booking.activity_type}}</view>
+        <view class="global-card-location">@{{booking.location}}</view>
+        <view class="trash"><image src="/image/trash.png" bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}"></image></view>
       </view>
-      <view class="global-card-text-activity">{{booking.activity_type}}</view>
-      <view class="global-card-location">@{{booking.location}}</view>
-      <view class="trash"><image src="/image/trash.png" bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}"></image></view>
     </view>
+    <view wx:if="{{bookings.length===0}}" class="assist-text" style="margin-top:20px;">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
   </view>
-  <view wx:if="{{bookings.length===0}}" class="assist-text" style="margin-top:20px;">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
 </view>
