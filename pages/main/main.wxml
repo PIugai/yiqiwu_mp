@@ -10,12 +10,11 @@
         <button type="default" bindtap="selectMap" class="toggle-button">MAP</button>
       </view>
     </view>
-    <image mode="aspectFit" src="/image/logo.png" />
+    <image id='logo' mode="aspectFit" src="/image/logo.png" />
     </view>
   </CustomNav>
 </view>
 
-<!-- overall container -->
 <view class="page-container">
 
   <!-- filters -->
