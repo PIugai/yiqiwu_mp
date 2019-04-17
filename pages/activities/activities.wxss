@@ -1,4 +1,0 @@
-.card-container {
-  background-color: #920106;
-  height: calc(100vh - 95px - 1px);
-}
