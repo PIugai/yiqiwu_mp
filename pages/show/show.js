@@ -19,8 +19,9 @@ Page({
       method: 'GET',
       success(e) {
         let event = e.data;
-        event["height"] = 60; 
+        event["height"] = 60;
         event["width"] = 50;
+        event["iconPath"] = event.iconPathRed;
         const mk = [e.data];
         const lt = event.latitude;
         const lg = event.longitude;
