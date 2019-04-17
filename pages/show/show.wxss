@@ -34,16 +34,29 @@ flex-direction:row;
 justify-content:space-around;
 font-size: 23px;
 text-align: start;
-margin: 5%
+margin: 4%
 }
+
+.capacity {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
 .icon {
   height: 30px;
   width: 30px;
 }
 
 .icon-lg {
-  height: 42px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
 }
 
 .event-name {
