@@ -4,6 +4,7 @@
     <swiper-item> 
       <view style="background-image: url('http://lc-odcccsle.cn-n1.lcfile.com/fe68b016700b2db02d14/spin-top.png')" class='swiper-item-bg'>
       <text class="landing-text">让运动 与众不同</text>
+  
 
       </view>
     </swiper-item>

@@ -29,7 +29,7 @@ height: 100%;
 
 .btn {
   background-color: #f9d102; 
-  opacity: 0.9;
+  opacity: 1;
   width: 60%;
   z-index: 1;
   position: absolute;
@@ -60,7 +60,8 @@ font-size: 35pt;
 text-align: center;
 top: 55%;
 text-shadow: 2px 2px 3px rgb(78, 78, 78);
-background-color:rgba(226, 226, 226, 0.623);
+background-color:rgba(229, 1, 17, 0.452);
 word-break: keep-all;
 width: 100%;
 }
+
