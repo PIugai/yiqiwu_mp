@@ -6,6 +6,10 @@ Page({
     available: true
   },
 
+  goBack: function () {
+    wx.navigateBack();
+  },
+
   onLoad: function (options) {
     let page = this;
 
