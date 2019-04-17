@@ -16,12 +16,6 @@
 
 <view class="page-container">
 
-  <!-- filters -->
-  <view wx-if="{{showFilter}}" class="filter-container">
-    <view wx:for="{{wxFilter}}" wx:for-item="button">
-      <button bindtap="filterActivity" data-activity="{{button.activity}}" class="{{button.active}}" ><image src="{{button.src}}" class="image-filter"></image></button>
-    </view>
-  </view>
 
   <!-- main content -->
   <view class="main-content">
@@ -64,7 +58,7 @@
             <block wx:for="{{filteredEvents}}" wx:for-item="event" wx:key="event.id" bindtap="showEvent" class="card" data-event="{{event.id}}">
               
                 <swiper-item>
-                  <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url({{event.photo}})' bindtap="selectEvent" data-event="{{event.id}}">
+                  <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url({{event.photo}})' bindtap="showEvent" data-event="{{event.id}}">
                     <view class="card-mid-block">
                       <view class="card-info">
                         <image class="card-icon" src="/image/calendar.png"></image>
