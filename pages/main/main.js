@@ -2,6 +2,10 @@ const app = getApp();
 Page({
 
   data: {
+    indicatorDots: false,
+    autoplay: true,
+    interval: 5000,
+    duration: 5000,
     sc: '18',
     map: true,
     selectionMade: false,
@@ -21,6 +25,27 @@ Page({
     ]
   },
 
+  changeIndicatorDots: function (e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay: function (e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange: function (e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange: function (e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  },
+
   onLoad: function (options) {
     let page = this;
     wx.request({
@@ -28,6 +53,9 @@ Page({
       method: 'GET',
       success(e) {
         const events = e.data.events;
+        events.forEach(function (element) {
+          element.date = element.date.slice(0, -6)
+        });
         events.forEach((event) => {
           event["height"] = 60;
           event["width"] = 50;
@@ -86,6 +114,18 @@ Page({
 
 // navigate to show page
   showEvent(e) {
+    const event_id = e.currentTarget.dataset.event;
+
+    wx.navigateTo({
+      url: `../show/show?id=${event_id}`
+    });
+  },
+
+  selectEvent(e) {
+
+    this.autoplay = false;
+    console.log(this.autoplay);
+
     const event_id = e.currentTarget.dataset.event;
 
     wx.navigateTo({
