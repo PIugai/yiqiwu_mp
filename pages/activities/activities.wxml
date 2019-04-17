@@ -4,7 +4,7 @@
 
 <view class="card-container">
   <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="booking.event_id">
-    <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{booking.photo}})'>
+    <view class="global-card" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url({{booking.photo}})'>
       <view class="card-mid-block">
         <view class="card-info">
           <image class="card-icon" src="/image/calendar.png"></image>
@@ -24,5 +24,5 @@
       <image src="/image/trash.png" bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}" class="trash"></image>
     </view>
   </view>
-  <view wx:if="{{bookings.length===0}}" class="assist-text">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
+  <view wx:if="{{bookings.length===0}}" class="assist-text" style="margin-top:20px;">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
 </view>
