@@ -1,21 +1,9 @@
 <!-- navbar -->
 <view class="navbar">
- <CustomNav >
-    <view class='pair'>
-    <view class='button'>
-      <view wx:if="{{!(map)}}">
-        <button type="default" bindtap="selectMap" class="toggle-button">MAP</button>
-      </view>
-      </view>
-
-
-    <image id='logo' mode="aspectFit" src="/image/logo_s.png" />
-    </view>
-  </CustomNav>
+  <CustomNav profilePic="/image/logo_s.png" />
 </view>
 
 <view class="page-container">
-
 
   <!-- main content -->
   <view class="main-content">
@@ -30,7 +18,7 @@
 
 
       <view class="map-container">
-        <map bindmarkertap="markertap" longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 65vh;" markers="{{filteredEvents}}">
+        <map bindmarkertap="markertap" longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: calc(100vh - 95px - 130px - 21px);" markers="{{filteredEvents}}">
           
           <cover-view class="button-filter-toggle" >
             <cover-view bindtap="showFilter">FILTER</cover-view>

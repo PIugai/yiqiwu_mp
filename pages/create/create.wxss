@@ -1,7 +1,14 @@
 /* pages/create/create.wxss */
+.page-container {
+  margin: 0px;
+  min-height: 100vh;
+  height: 100%;
+  /* height: 100vh; */
+  background-color: #920106;
+}
 
 .form-container {
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;

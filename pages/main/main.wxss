@@ -102,7 +102,7 @@
   padding: 5px;
 }
 .map-container {
-  height: 100vh;
+  height: calc(100vh - 95px-21px);
   overflow: hidden;
   z-index: -500;
 }
