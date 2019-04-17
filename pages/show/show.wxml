@@ -34,15 +34,15 @@
 <view class="mid-block">
   <view class="time">
     <image class="icon" src="/image/calendar.png"></image>
-    <text style="padding: 18%"> {{event.date}}</text>
+    <text style="padding-left: 15%"> {{event.date}}</text>
   </view>
   <view class="time">
     <image class="icon" src="/image/clock.png"></image>
-    <text style="padding: 19%"> {{event.start_time}} - {{event.end_time}}</text>
+    <text style="padding-left: 15%"> {{event.start_time}} - {{event.end_time}}</text>
   </view>
   <view class="capacity">
-    <image class="icon-lg" src="/image/work-team.png"></image>
-    <text style="padding: 30%">{{event.spots_filled}} / {{event.capacity}}</text>
+    <image class="icon" src="/image/work-team.png"></image>
+    <text style="padding-left: 15%">{{event.spots_filled}} / {{event.capacity}}</text>
   </view>
 </view>
 
