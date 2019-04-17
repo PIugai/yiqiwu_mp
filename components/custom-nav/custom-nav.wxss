@@ -9,7 +9,7 @@ width:100px;
 }
 
 .nav-outer-container {
-  background-color: #920106;
+  background-color: #B70107;
   height: 95px;
   width: 100%;
 }
