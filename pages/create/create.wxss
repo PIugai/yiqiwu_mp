@@ -1,5 +1,12 @@
 /* pages/create/create.wxss */
-
+.page-container {
+  height: calc(100vh - 95px - 1px)
+}
+.card-container {
+  background-color: #920106;
+  /* height: 100%; */
+  display: inline-block;
+}
 .form-container {
   height: 100%;
   display: flex;
