@@ -76,3 +76,13 @@
 .cardtext-small {
   font-size: 20pt;
 }
+
+.pair {
+  display: flex;
+  justify-items: center;
+}
+
+.button {
+  padding-left:6%;
+ padding-top:14%;
+}
