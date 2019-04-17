@@ -1,4 +1,15 @@
 <!-- <view class="card" style="background-image: url('{{event.photo}}');"></view> -->
+<view class="navbar">
+ <CustomNav >
+<view class='pair'>
+ <view class="back-btn" bindtap="goBack">
+  <image src="/image/clock.png" mode="aspectFit"/>
+ </view>
+   <image mode="aspectFit" src="/image/logo.png" />
+</view>
+ </CustomNav>
+</view>
+
 <view class="card">
   <image src="{{event.photo}}"></image>
 </view>

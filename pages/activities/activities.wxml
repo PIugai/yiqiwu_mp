@@ -1,6 +1,5 @@
 <view class="navbar">
- <CustomNav profilePic="/image/logo.png" />
- 
+<CustomNav profilePic="/image/logo.png" />
 </view>
 
 <view class="card-container">

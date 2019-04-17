@@ -1,5 +1,11 @@
 <!-- form to make a new event starts here-->
 <!-- <view class="h2-header">Create new</view> -->
+<view class="navbar">
+<CustomNav profilePic="/image/logo.png" />
+</view>
+
+
+
 
 <view class="form-container">
   

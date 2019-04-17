@@ -140,3 +140,9 @@ margin: 5%
   position: absolute;
   right: 15%
 }
+
+
+.back-btn {
+  padding-left:6%;
+ padding-top:14%;
+}
