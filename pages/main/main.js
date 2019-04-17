@@ -89,7 +89,7 @@ Page({
       },
     })
   },
-  
+
   // preview event when pin is tapped
   markertap(e) {
     const filteredEvents = this.data.filteredEvents;
@@ -154,6 +154,7 @@ Page({
   showFilter() {
     let showFilter = this.data.showFilter;
     showFilter = (showFilter === false)
+    console.log(showFilter)
 
     this.setData({
       showFilter: showFilter

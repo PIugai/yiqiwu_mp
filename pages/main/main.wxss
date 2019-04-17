@@ -4,16 +4,18 @@
 }
 /****** filter ******/
 .filter-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  width: 370px;
   justify-content: center;  
   align-items: center;
   padding: 0px;
-  position: absolute;
-  left: 13px;
-  z-index: 10;
+  position: fixed;
+  z-index: 9999;
   animation: filter-card 2s ease;
   animation-fill-mode: forwards;
+  top: 100px;
+  left: 3%;
 }
 @keyframes filter-card {
   from {
@@ -30,7 +32,7 @@
   align-items: center;
   justify-content: center;
   padding: 0px;
-  margin: 8px;
+  margin: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
   background-color: white;
   border: solid 8px #B70107;
@@ -42,7 +44,7 @@
   align-items: center;
   justify-content: center;
   padding: 0px;
-  margin: 8px;
+  margin: 5px;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
   background-color: white;
   opacity: 0.7;
@@ -60,18 +62,23 @@
   align-items: center;
   justify-content: center;
   padding: 0px;
-  position: absolute;
-  left: 10px;
-  top: 105px;
+  margin-left: 10px;
+  margin-top: 10px;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   background-color: #B70107;
   color: white;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
-  z-index: 10;
 }
 
+.control {
+  position: relative;
+  z-index: 9999;
+  height: 100vh;
+  width: 100%;
+  top: -20px;
+}
 /****** map page ******/
 .main-content {
   width: 100%;

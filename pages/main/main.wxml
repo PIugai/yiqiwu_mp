@@ -16,17 +16,9 @@
 
 <view class="page-container">
 
-  <!-- filters -->
-  <view wx-if="{{showFilter}}" class="filter-container">
-    <view wx:for="{{wxFilter}}" wx:for-item="button">
-      <button bindtap="filterActivity" data-activity="{{button.activity}}" class="{{button.active}}" ><image src="{{button.src}}" class="image-filter"></image></button>
-    </view>
-  </view>
-
     <!-- main content -->
   <view class="main-content">
-    <button bindtap="showFilter" class="button-filter-toggle">FILTER</button>
-
+   
     <!-- map view -->
     <view wx:if="{{map}}">
       <view class='button'>
@@ -36,7 +28,21 @@
     </view>
 
       <view class="map-container">
-        <map bindmarkertap="markertap" longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 65vh;" markers="{{filteredEvents}}"></map>
+        <map bindmarkertap="markertap" longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: 65vh;" markers="{{filteredEvents}}">
+          
+          <cover-view class="button-filter-toggle" >
+            <cover-view bindtap="showFilter">FILTER</cover-view>
+          </cover-view>
+
+          <cover-view class="control" wx:if="{{showFilter}}">
+            <cover-view class="filter-container">
+              <cover-view wx:for="{{wxFilter}}" wx:for-item="button" class="{{button.active}}" >
+                <cover-image bindtap="filterActivity" data-activity="{{button.activity}}" src="{{button.src}}" class="image-filter"></cover-image>
+              </cover-view>
+            </cover-view>
+          </cover-view>
+
+        </map>
 
     <view wx:if="{{!(selectionMade)}}">
       <view class="display">
