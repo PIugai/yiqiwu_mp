@@ -1,6 +1,7 @@
 <view class="navbar">
- <CustomNav profilePic="/image/logo.png" >
-
+ <CustomNav >
+<view class='pair'>
+<view class='button'>
   <view wx:if="{{map}}">
       <button type="default" hover-class="hover" size="mini" bindtap="selectList" class="toggle-button">LIST</button>
   </view>
@@ -8,9 +9,10 @@
   <view wx:if="{{!(map)}}">
               <button type="default" hover-class="hover" size="mini" bindtap="selectMap" class="toggle-button">MAP</button>
   </view>
+</view>
 
-  
-
+  <image mode="aspectFit" src="/image/logo.png" />
+</view>
  </CustomNav>
 </view>
 
