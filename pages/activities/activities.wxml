@@ -21,7 +21,7 @@
       </view>
       <view class="global-card-text-activity">{{booking.activity_type}}</view>
       <view class="global-card-location">@{{booking.location}}</view>
-      <image src="/image/trash.png" bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}" class="trash"></image>
+      <view class="trash"><image src="/image/trash.png" bindtap="deleteBooking" data-booking="{{booking.id}}" data-event="{{booking.event_id}}"></image></view>
     </view>
   </view>
   <view wx:if="{{bookings.length===0}}" class="assist-text" style="margin-top:20px;">You haven't joined any activities yet. Go to 'Find Activities' to join one.</view>
