@@ -31,6 +31,7 @@ Page({
         events.forEach((event) => {
           event["height"] = 60;
           event["width"] = 50;
+          event["iconPath"] = event.iconPathYellow;
         });
 
         page.setData({
@@ -63,14 +64,24 @@ Page({
   
   // preview event when pin is tapped
   markertap(e) {
-    const events = this.data.events;
-    const event = events.find(events => events.id === e.markerId)
+    const filteredEvents = this.data.filteredEvents;
+    let event = filteredEvents.find(filteredEvents => filteredEvents.id === e.markerId)
     const selectionMade = true
+    event.iconPath = event.iconPathRed
+    for (var i = filteredEvents.length - 1; i >= 0; i--) {
+      if (filteredEvents[i].id === event.id) {
+        filteredEvents[i].iconPath = event.iconPath;
+      } else {
+        filteredEvents[i].iconPath = filteredEvents[i].iconPathYellow;
+      }
+    };
 
     this.setData({
       event: event,
-      selectionMade: selectionMade
+      selectionMade: selectionMade,
+      filteredEvents: filteredEvents
     })
+
   },
 
 // navigate to show page

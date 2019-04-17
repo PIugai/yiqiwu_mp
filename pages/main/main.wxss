@@ -17,10 +17,10 @@
 }
 @keyframes filter-card {
   from {
-    transform: translateY(25px);
+    transform: translateY(35px);
   }
   to {
-    transform: translateY(35px);
+    transform: translateY(45px);
   }
 }
 .button-filter {
@@ -139,8 +139,10 @@
   justify-items: center;
 }
 .button {
-  padding-left:6%;
- padding-top:14%;
+ position: absolute;
+ z-index: 10;
+ right: 10px;
+ top: 115px;
 }
 
 #logo {
