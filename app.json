@@ -23,10 +23,10 @@
     }
   },
   "tabBar": {
-    "backgroundColor": "white",
+    "backgroundColor": "#B70107",
     "borderStyle": "black",
-    "selectedColor": "#FF7C00",
-    "color": "#919191",
+    "selectedColor": "#FFFFFF",
+    "color": "#000000",
     "list": [
       {
         "pagePath": "pages/activities/activities",
