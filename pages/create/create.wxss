@@ -9,6 +9,9 @@
   padding: 20rpx 0;
   box-sizing: border-box;
   background-color: #920106;
+  color: rgba(130, 130, 130, 1); 
+  font-size: 30rpx;
+
 } 
 
 textarea {
@@ -18,19 +21,18 @@ textarea {
   padding-left: 0px;
 }
 picker {
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 .text-area-wrap {
   padding: 25rpx 10rpx;
   margin: 3px;
+  margin-top:5px;
+  margin-bottom:5px;
   background-color: rgba(255, 255, 255, 0.8); 
   /* margin-top:8px; */
-  border-radius: 2px;
+  border-radius: 5px;
   border-left: 5px solid #9F9F9C;
   height: 25px;
-  font-size: 30rpx;
-  color:#4c4c4c;
-  font-weight: 310;
 }
 
 .box {
