@@ -29,6 +29,12 @@
     transform: translateY(45px);
   }
 }
+
+.img-filter {
+  width: 17vw;
+  height: 17vw;
+}
+
 .button-filter {
   display: flex;
   width: 19vw;
