@@ -163,7 +163,7 @@ Page({
     };
 
     wx.request({
-      url: `${app.globalData.host}${app.globalData.version}events`,
+      url: `${app.globalData.host}${app.globalData.version}users/${user_id}/events`,
       method: 'POST',
       data: event,
       success(res) {

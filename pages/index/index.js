@@ -23,6 +23,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
+      
       wx.switchTab({
         url: '/pages/main/main',
       })
@@ -76,9 +77,29 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    // start
+    console.log("test")
+    console.log(this.data.userInfo)
+    console.log(app.globalData.userId)
+    console.log(`${app.globalData.host}${app.globalData.version}users/${app.globalData.userId}`)
+    let name = this.data.userInfo.nickName;
+    let photo = this.data.userInfo.avatarUrl;
 
-    wx.switchTab({
-      url: '/pages/main/main',
+    let userUpdate = {
+      name: name,
+      photo: photo
+    }
+
+    wx.request({
+      url: `${app.globalData.host}${app.globalData.version}users/${app.globalData.userId}`,
+      method: 'PUT',
+      data: userUpdate,
+      success() {
+        wx.switchTab({
+          url: '/pages/main/main',
+        })
+      }
     })
+
   }
 })
