@@ -10,11 +10,11 @@
    
     <!-- map view -->
     <view wx:if="{{map}}">
-      <view class='button'>
+      <!-- <view class='button'>
         <view wx:if="{{map}}">
           <button type="default" bindtap="selectList" class="toggle-button">LIST</button>
         </view>
-    </view>
+    </view> -->
 
 
       <view class="map-container">
