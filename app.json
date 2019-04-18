@@ -5,8 +5,6 @@
     "pages/show/show",
     "pages/activities/activities",
     "pages/create/create",
-    "pages/main-filter/main-filter",
-    "pages/main-filter2/main-filter2",
     "pages/test/test",
     "components/custom-nav/custom-nav"
   ],
