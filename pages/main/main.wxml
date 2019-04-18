@@ -20,8 +20,8 @@
       <view class="map-container">
         <map bindmarkertap="markertap" longitude="{{lg}}" latitude="{{lt}}" scale="{{sc}}" style="width: 100%; height: calc(100vh - 95px - 130px - 21px);" markers="{{filteredEvents}}">
           
-          <cover-view class="button-filter-toggle" >
-            <cover-view bindtap="showFilter">FILTER</cover-view>
+          <cover-view class="button-filter-toggle">
+            <cover-image  bindtap='showFilter' src="/image/filter.png" class='img-filter'></cover-image>
           </cover-view>
 
           <cover-view class="control" wx:if="{{showFilter}}">
