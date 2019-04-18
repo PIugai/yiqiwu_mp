@@ -4,71 +4,88 @@
 <CustomNav profilePic="/image/logo_s.png" />
 </view>
 
-
-
 <view class="page-container">
-  <view class="form-container">
-    
+  <view class="box">
     <form bindsubmit="bindSubmit">
-    <view class='box'>
 
       <!-- choose activity -->
-
-      <view class="text-area-wrap">
-        <picker bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" name="activity_type">
-        Choose activity: {{array[index]}}
-        </picker>
+      <view class="section">
+        <view class="section__title">ACTIVITY</view>
+        <view class="text-area-wrap">
+          <picker bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}" name="activity_type">
+            <view style="display:flex;">
+              <view style="flex-grow:1;">{{array[index]}}</view>
+              <image src="/image/arrowdown.png" style="width: 20px; height: 20px;"></image>
+            </view>
+          </picker>
+        </view>
       </view>
     
       <!-- location -->
-      <view class="text-area-wrap" bindtap="bindOnTouchStart" >
-        <text>Location: {{name}}</text>
-        <textarea value="{{name}}" name="location" style="font-size:1px;width:1px;height:1px;"></textarea>
+      <view class="section">
+        <view class="section__title">LOCATION</view>
+        <view class="text-area-wrap" bindtap="bindOnTouchStart" >
+          <text>{{name}}</text>
+          <textarea value="{{name}}" name="location" style="font-size:1px;width:1px;height:1px;"></textarea>
+        </view>
       </view>
   
       <!-- describe*** -->
-      <view class="text-area-wrap">
-        <textarea value="{{description}}" placeholder="Describe activity:" class="" name="description"/>
+      <view class="section">
+        <view class="section__title">DESCRIPTION</view>
+        <view class="text-area-wrap">
+          <textarea value="{{description}}" placeholder="Tell us more" class="" name="description"/>
+        </view>
       </view>
-      
       <!-- max participants*** -->
-      <view class="text-area-wrap">
-        <textarea value="{{capacity}}" placeholder="Max participants:" name="capacity" />
+      <view class="section">
+        <view class="section__title">PARTICIPANTS</view>
+        <view class="text-area-wrap">
+          <textarea value="{{capacity}}" placeholder="Max participants" name="capacity"/>
+        </view>
       </view>
       
 
       <!-- date -->
-      <picker mode="date" value="{{date}}" start="2019-04-19" end="2025-01-01" bindchange="bindDateChange" name="date_only">
-        <view class=" text-area-wrap ">
-          Select date: {{date}}
-        </view>
-      </picker>
-      
-      <view style="display:flex;">
-      <!-- start time -->
-      <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only" style="width:50%">
+      <view class="section">
+        <view class="section__title">DATE</view>
         <view class=" text-area-wrap">
-          Start time: {{start_time_only}}
+          <picker mode="date" value="{{date}}" start="2019-04-19" end="2025-01-01" bindchange="bindDateChange" name="date_only">
+            <view style="display:flex;">
+              <view style="flex-grow:1;">Date {{date}}</view>
+              <image src="/image/arrowdown.png" style="width: 20px; height: 20px;"></image>
+            </view>
+          </picker>
         </view>
-      </picker>
+      </view>
       
 
+    <!-- start time -->
+      <view class="section-time">
+        <view class="section-time-half">
+          <view class="section__title">START</view>
+          <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindStartTimeChange" name="start_time_only">
+            <view class=" text-area-time" style="display:flex;">
+              <view style="flex-grow:1;">{{start_time_only}}</view>
+              <image src="/image/arrowdown.png" style="width: 20px; height: 20px;"></image>
+            </view>
+          </picker>
+        </view>
       <!-- end time -->
-      <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only" style="width:50%;">
-        <view class=" text-area-wrap">
-          End time: {{end_time_only}}
+        <view class="section-time-half" id="section-time-end">
+          <view class="section__title">END</view>
+          <picker mode="time" value="{{time}}" start="05:00" end="22:00" bindchange="bindEndTimeChange" name="end_time_only">
+            <view class=" text-area-time" style="display:flex;">
+              <view style="flex-grow:1;">{{end_time_only}}</view>
+              <image src="/image/arrowdown.png" style="width: 20px; height: 20px;"></image>
+            </view>
+          </picker>
         </view>
-      </picker>
       </view>
-
       
-      
-
-      <button  style="margin-top:10px;" type="primary" form-type="submit" loading="{{loading}}">Submit</button>
-      </view>
-      </form>
-
-    </view>
+      <button  class="button-jittery" form-type="submit" loading="{{loading}}">SUBMIT</button>
+    </form>
+  </view>
 
   <!-- cards for events starts here -->
 
