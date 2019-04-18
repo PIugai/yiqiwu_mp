@@ -24,7 +24,7 @@
 
 <view class="host">
   <image class="avatar" src="{{event.host_photo}}"></image>
-  <text style= "margin-left: 36%; "> {{event.host_name}}</text>
+  <text class= "avatar-text"> {{event.host_name}}</text>
 </view>
 
 <view class="block">
@@ -33,16 +33,16 @@
 
 <view class="mid-block">
   <view class="time">
-    <image class="icon" src="/image/calendar.png"></image>
-    <text style="padding-left: 15%"> {{event.date}}</text>
+    <image class="icon"src="/image/calendar.png"></image>
+    <text class="icon-text"> {{event.date}}</text>
   </view>
   <view class="time">
     <image class="icon" src="/image/clock.png"></image>
-    <text style="padding-left: 15%"> {{event.start_time}} - {{event.end_time}}</text>
+    <text class="icon-text"> {{event.start_time}} - {{event.end_time}}</text>
   </view>
   <view class="capacity">
     <image class="icon" src="/image/work-team.png"></image>
-    <text style="padding-left: 15%">{{event.spots_filled}} / {{event.capacity}}</text>
+    <text class="icon-text">{{event.spots_filled}} / {{event.capacity}}</text>
   </view>
 </view>
 
