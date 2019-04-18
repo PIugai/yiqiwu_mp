@@ -81,9 +81,7 @@
   background-color: #920106;
   color: white;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
-
-  animation: shimmy 1.5s infinite;
-  animation-direction: alternate;
+  -webkit-animation: pulse 1s infinite;
 }
 
 .control {
@@ -176,11 +174,26 @@
   margin-left:36%;
 }
 
-@keyframes shimmy {
-    0% {
-        transform: translatey(-20px);
-    }
-    100% {
-        transform: translatey(20px);
-    }
+
+
+
+@-webkit-keyframes pulse {
+ 0% {
+   -moz-transform: scale(0.9);
+   -ms-transform: scale(0.9);
+   -webkit-transform: scale(0.9);
+   transform: scale(0.9);
+ }
+ 70% {
+   -moz-transform: scale(1.1);
+   -ms-transform: scale(1.1);
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 100% {
+   -moz-transform: scale(0.9);
+   -ms-transform: scale(0.9);
+   -webkit-transform: scale(0.9);
+   transform: scale(0.9);
+ }
 }
